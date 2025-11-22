@@ -120,12 +120,12 @@ export default function Home() {
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="bg-linear-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
-                Your idea to usable game or app in minutes
+                Your Idea to a great game, app in minutes
               </span>
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              The ultimate kid-safe social network: Learn AI, build games, and express creativity in a safe space.
+              The ultimate kid-safe gaming hub: Use AI to build games and express creativity in a safe space.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -206,80 +206,84 @@ export default function Home() {
             </Link>
 
             {/* AI Academy Card - Second */}
-            <Card className="group hover:shadow-xl transition-all duration-300 border-orange-100 hover:border-orange-300">
-              <CardHeader className="text-center">
-                <div className="w-16 h-16 bg-linear-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                  <GraduationCap className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle className="text-xl font-bold text-gray-800">Applaa Academy</CardTitle>
-                <CardDescription className="text-gray-600">
-                  Learn artificial intelligence through fun, interactive courses designed for young minds
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 text-sm text-gray-600">
-                  <li className="flex items-center">
-                    <Star className="w-4 h-4 text-orange-500 mr-2" />
-                    AI Basics & Machine Learning
-                  </li>
-                  <li className="flex items-center">
-                    <Star className="w-4 h-4 text-orange-500 mr-2" />
-                    Game Development & Coding
-                  </li>
-                  <li className="flex items-center">
-                    <Star className="w-4 h-4 text-orange-500 mr-2" />
-                    Creative AI Projects
-                  </li>
-                  <li className="flex items-center">
-                    <Star className="w-4 h-4 text-orange-500 mr-2" />
-                    Earn Certificates & Badges
-                  </li>
-                </ul>
-                <div className="mt-6">
-                  <Badge className="bg-orange-100 text-orange-800 hover:bg-orange-200">
-                    Age 6-18
-                  </Badge>
-                </div>
-              </CardContent>
-            </Card>
+            <Link href="#games">
+              <Card className="group hover:shadow-xl transition-all duration-300 border-orange-100 hover:border-orange-300 cursor-pointer">
+                <CardHeader className="text-center">
+                  <div className="w-16 h-16 bg-linear-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                    <GraduationCap className="w-8 h-8 text-white" />
+                  </div>
+                  <CardTitle className="text-xl font-bold text-gray-800">Applaa Academy</CardTitle>
+                  <CardDescription className="text-gray-600">
+                    Learn artificial intelligence through fun, interactive courses designed for young minds
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3 text-sm text-gray-600">
+                    <li className="flex items-center">
+                      <Star className="w-4 h-4 text-orange-500 mr-2" />
+                      AI Basics & Machine Learning
+                    </li>
+                    <li className="flex items-center">
+                      <Star className="w-4 h-4 text-orange-500 mr-2" />
+                      Game Development & Coding
+                    </li>
+                    <li className="flex items-center">
+                      <Star className="w-4 h-4 text-orange-500 mr-2" />
+                      Creative AI Projects
+                    </li>
+                    <li className="flex items-center">
+                      <Star className="w-4 h-4 text-orange-500 mr-2" />
+                      Earn Certificates & Badges
+                    </li>
+                  </ul>
+                  <div className="mt-6">
+                    <Badge className="bg-orange-100 text-orange-800 hover:bg-orange-200">
+                      Age 6-18
+                    </Badge>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
 
             {/* Social Community Card - Third */}
-            <Card className="group hover:shadow-xl transition-all duration-300 border-orange-100 hover:border-orange-300">
-              <CardHeader className="text-center">
-                <div className="w-16 h-16 bg-linear-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                  <Users className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle className="text-xl font-bold text-gray-800">Social Community</CardTitle>
-                <CardDescription className="text-gray-600">
-                  Connect with friends, share creations, and build your digital community safely
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 text-sm text-gray-600">
-                  <li className="flex items-center">
-                    <Heart className="w-4 h-4 text-orange-500 mr-2" />
-                    Make New Friends
-                  </li>
-                  <li className="flex items-center">
-                    <Heart className="w-4 h-4 text-orange-500 mr-2" />
-                    Share Your Creations
-                  </li>
-                  <li className="flex items-center">
-                    <Heart className="w-4 h-4 text-orange-500 mr-2" />
-                    Join Clubs & Groups
-                  </li>
-                  <li className="flex items-center">
-                    <Heart className="w-4 h-4 text-orange-500 mr-2" />
-                    Safe Chat & Messaging
-                  </li>
-                </ul>
-                <div className="mt-6">
-                  <Badge className="bg-orange-100 text-orange-800 hover:bg-orange-200">
-                    Age 8-18
-                  </Badge>
-                </div>
-              </CardContent>
-            </Card>
+            <Link href="/auth/login">
+              <Card className="group hover:shadow-xl transition-all duration-300 border-orange-100 hover:border-orange-300 cursor-pointer">
+                <CardHeader className="text-center">
+                  <div className="w-16 h-16 bg-linear-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                    <Users className="w-8 h-8 text-white" />
+                  </div>
+                  <CardTitle className="text-xl font-bold text-gray-800">Social Community</CardTitle>
+                  <CardDescription className="text-gray-600">
+                    Connect with friends, share creations, and build your digital community safely
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3 text-sm text-gray-600">
+                    <li className="flex items-center">
+                      <Heart className="w-4 h-4 text-orange-500 mr-2" />
+                      Make New Friends
+                    </li>
+                    <li className="flex items-center">
+                      <Heart className="w-4 h-4 text-orange-500 mr-2" />
+                      Share Your Creations
+                    </li>
+                    <li className="flex items-center">
+                      <Heart className="w-4 h-4 text-orange-500 mr-2" />
+                      Join Clubs & Groups
+                    </li>
+                    <li className="flex items-center">
+                      <Heart className="w-4 h-4 text-orange-500 mr-2" />
+                      Safe Chat & Messaging
+                    </li>
+                  </ul>
+                  <div className="mt-6">
+                    <Badge className="bg-orange-100 text-orange-800 hover:bg-orange-200">
+                      Age 8-18
+                    </Badge>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
           </div>
         </div>
       </section>

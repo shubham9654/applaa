@@ -249,7 +249,7 @@ export default function AboutPage() {
                   />
                 </div>
                 <h3 className="text-lg font-bold text-gray-800 mb-2">Siva Boppana</h3>
-                <p className="text-orange-500 font-semibold mb-2 text-sm">Team Member</p>
+                <p className="text-orange-500 font-semibold mb-2 text-sm">Agentic AI Head</p>
                 <p className="text-xs text-gray-600">
                   30+ years in technology
                 </p>
@@ -277,7 +277,7 @@ export default function AboutPage() {
                   />
                 </div>
                 <h3 className="text-lg font-bold text-gray-800 mb-2">Mithun Majumdar</h3>
-                <p className="text-orange-500 font-semibold mb-2 text-sm">Team Member</p>
+                <p className="text-orange-500 font-semibold mb-2 text-sm">AI Senior Engineer</p>
                 <p className="text-xs text-gray-600">
                   Contributing to Applaa's mission
                 </p>
@@ -305,7 +305,7 @@ export default function AboutPage() {
                   />
                 </div>
                 <h3 className="text-lg font-bold text-gray-800 mb-2">Mukesh Patidar</h3>
-                <p className="text-orange-500 font-semibold mb-2 text-sm">Team Member</p>
+                <p className="text-orange-500 font-semibold mb-2 text-sm">Fullstack & UI lead</p>
                 <p className="text-xs text-gray-600">
                   Contributing to Applaa's mission
                 </p>
@@ -333,7 +333,7 @@ export default function AboutPage() {
                   />
                 </div>
                 <h3 className="text-lg font-bold text-gray-800 mb-2">Ashish Maurya</h3>
-                <p className="text-orange-500 font-semibold mb-2 text-sm">Team Member</p>
+                <p className="text-orange-500 font-semibold mb-2 text-sm">Front-end Engineer & UI</p>
                 <p className="text-xs text-gray-600">
                   Contributing to Applaa's mission
                 </p>
@@ -368,146 +368,6 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            {/* Sanskriti Mishra */}
-            <Card className="text-center border-orange-100 hover:border-orange-300 hover:shadow-xl transition-all duration-300">
-              <CardContent className="pt-6">
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-200 bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
-                  <Image 
-                    src="/placeholder-avatar.svg" 
-                    alt="Sanskriti Mishra" 
-                    width={96} 
-                    height={96}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                      const parent = target.parentElement;
-                      if (parent) {
-                        parent.innerHTML = '<div class="w-full h-full flex items-center justify-center text-orange-500 text-2xl font-bold">SM</div>';
-                      }
-                    }}
-                  />
-                </div>
-                <h3 className="text-lg font-bold text-gray-800 mb-2">Sanskriti Mishra</h3>
-                <p className="text-orange-500 font-semibold mb-2 text-sm">Team Member</p>
-                <p className="text-xs text-gray-600">
-                  Contributing to Applaa's mission
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Leena Antre */}
-            <Card className="text-center border-orange-100 hover:border-orange-300 hover:shadow-xl transition-all duration-300">
-              <CardContent className="pt-6">
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-200 bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
-                  <Image 
-                    src="/placeholder-avatar.svg" 
-                    alt="Leena Antre" 
-                    width={96} 
-                    height={96}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                      const parent = target.parentElement;
-                      if (parent) {
-                        parent.innerHTML = '<div class="w-full h-full flex items-center justify-center text-orange-500 text-2xl font-bold">LA</div>';
-                      }
-                    }}
-                  />
-                </div>
-                <h3 className="text-lg font-bold text-gray-800 mb-2">Leena Antre</h3>
-                <p className="text-orange-500 font-semibold mb-2 text-sm">Team Member</p>
-                <p className="text-xs text-gray-600">
-                  Contributing to Applaa's mission
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Ravi Kumar */}
-            <Card className="text-center border-orange-100 hover:border-orange-300 hover:shadow-xl transition-all duration-300">
-              <CardContent className="pt-6">
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-200 bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
-                  <Image 
-                    src="/placeholder-avatar.svg" 
-                    alt="Ravi Kumar" 
-                    width={96} 
-                    height={96}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                      const parent = target.parentElement;
-                      if (parent) {
-                        parent.innerHTML = '<div class="w-full h-full flex items-center justify-center text-orange-500 text-2xl font-bold">RK</div>';
-                      }
-                    }}
-                  />
-                </div>
-                <h3 className="text-lg font-bold text-gray-800 mb-2">Ravi Kumar</h3>
-                <p className="text-orange-500 font-semibold mb-2 text-sm">Team Member</p>
-                <p className="text-xs text-gray-600">
-                  Contributing to Applaa's mission
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Anushka Sharma */}
-            <Card className="text-center border-orange-100 hover:border-orange-300 hover:shadow-xl transition-all duration-300">
-              <CardContent className="pt-6">
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-200 bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
-                  <Image 
-                    src="/placeholder-avatar.svg" 
-                    alt="Anushka Sharma" 
-                    width={96} 
-                    height={96}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                      const parent = target.parentElement;
-                      if (parent) {
-                        parent.innerHTML = '<div class="w-full h-full flex items-center justify-center text-orange-500 text-2xl font-bold">AS</div>';
-                      }
-                    }}
-                  />
-                </div>
-                <h3 className="text-lg font-bold text-gray-800 mb-2">Anushka Sharma</h3>
-                <p className="text-orange-500 font-semibold mb-2 text-sm">Team Member</p>
-                <p className="text-xs text-gray-600">
-                  Contributing to Applaa's mission
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Sneha Goel */}
-            <Card className="text-center border-orange-100 hover:border-orange-300 hover:shadow-xl transition-all duration-300">
-              <CardContent className="pt-6">
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-200 bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
-                  <Image 
-                    src="/placeholder-avatar.svg" 
-                    alt="Sneha Goel" 
-                    width={96} 
-                    height={96}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                      const parent = target.parentElement;
-                      if (parent) {
-                        parent.innerHTML = '<div class="w-full h-full flex items-center justify-center text-orange-500 text-2xl font-bold">SG</div>';
-                      }
-                    }}
-                  />
-                </div>
-                <h3 className="text-lg font-bold text-gray-800 mb-2">Sneha Goel</h3>
-                <p className="text-orange-500 font-semibold mb-2 text-sm">Team Member</p>
-                <p className="text-xs text-gray-600">
-                  Contributing to Applaa's mission
-                </p>
-              </CardContent>
-            </Card>
-
             {/* Vishnu Mondrety */}
             <Card className="text-center border-orange-100 hover:border-orange-300 hover:shadow-xl transition-all duration-300">
               <CardContent className="pt-6">
@@ -529,7 +389,35 @@ export default function AboutPage() {
                   />
                 </div>
                 <h3 className="text-lg font-bold text-gray-800 mb-2">Vishnu Mondrety</h3>
-                <p className="text-orange-500 font-semibold mb-2 text-sm">Team Member</p>
+                <p className="text-orange-500 font-semibold mb-2 text-sm">Game & AI Developer</p>
+                <p className="text-xs text-gray-600">
+                  Contributing to Applaa's mission
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Sanskriti Mishra */}
+            <Card className="text-center border-orange-100 hover:border-orange-300 hover:shadow-xl transition-all duration-300">
+              <CardContent className="pt-6">
+                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-200 bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
+                  <Image 
+                    src="/placeholder-avatar.svg" 
+                    alt="Sanskriti Mishra" 
+                    width={96} 
+                    height={96}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const parent = target.parentElement;
+                      if (parent) {
+                        parent.innerHTML = '<div class="w-full h-full flex items-center justify-center text-orange-500 text-2xl font-bold">SM</div>';
+                      }
+                    }}
+                  />
+                </div>
+                <h3 className="text-lg font-bold text-gray-800 mb-2">Sanskriti Mishra</h3>
+                <p className="text-orange-500 font-semibold mb-2 text-sm">Content & Social Media Marketing</p>
                 <p className="text-xs text-gray-600">
                   Contributing to Applaa's mission
                 </p>
@@ -557,7 +445,7 @@ export default function AboutPage() {
                   />
                 </div>
                 <h3 className="text-lg font-bold text-gray-800 mb-2">Rakesh Konduru</h3>
-                <p className="text-orange-500 font-semibold mb-2 text-sm">Team Member</p>
+                <p className="text-orange-500 font-semibold mb-2 text-sm">Marketing & Growth</p>
                 <p className="text-xs text-gray-600">
                   Contributing to Applaa's mission
                 </p>
@@ -585,7 +473,35 @@ export default function AboutPage() {
                   />
                 </div>
                 <h3 className="text-lg font-bold text-gray-800 mb-2">Artur Myynkowiak</h3>
-                <p className="text-orange-500 font-semibold mb-2 text-sm">Team Member</p>
+                <p className="text-orange-500 font-semibold mb-2 text-sm">Content Marketing Team</p>
+                <p className="text-xs text-gray-600">
+                  Contributing to Applaa's mission
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Leena Antre */}
+            <Card className="text-center border-orange-100 hover:border-orange-300 hover:shadow-xl transition-all duration-300">
+              <CardContent className="pt-6">
+                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-200 bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
+                  <Image 
+                    src="/placeholder-avatar.svg" 
+                    alt="Leena Antre" 
+                    width={96} 
+                    height={96}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const parent = target.parentElement;
+                      if (parent) {
+                        parent.innerHTML = '<div class="w-full h-full flex items-center justify-center text-orange-500 text-2xl font-bold">LA</div>';
+                      }
+                    }}
+                  />
+                </div>
+                <h3 className="text-lg font-bold text-gray-800 mb-2">Leena Antre</h3>
+                <p className="text-orange-500 font-semibold mb-2 text-sm">Content Marketing Team</p>
                 <p className="text-xs text-gray-600">
                   Contributing to Applaa's mission
                 </p>
@@ -613,7 +529,91 @@ export default function AboutPage() {
                   />
                 </div>
                 <h3 className="text-lg font-bold text-gray-800 mb-2">Anil Chouhan</h3>
-                <p className="text-orange-500 font-semibold mb-2 text-sm">Team Member</p>
+                <p className="text-orange-500 font-semibold mb-2 text-sm">Wordpress & UI Developer</p>
+                <p className="text-xs text-gray-600">
+                  Contributing to Applaa's mission
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Anushka Sharma */}
+            <Card className="text-center border-orange-100 hover:border-orange-300 hover:shadow-xl transition-all duration-300">
+              <CardContent className="pt-6">
+                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-200 bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
+                  <Image 
+                    src="/placeholder-avatar.svg" 
+                    alt="Anushka Sharma" 
+                    width={96} 
+                    height={96}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const parent = target.parentElement;
+                      if (parent) {
+                        parent.innerHTML = '<div class="w-full h-full flex items-center justify-center text-orange-500 text-2xl font-bold">AS</div>';
+                      }
+                    }}
+                  />
+                </div>
+                <h3 className="text-lg font-bold text-gray-800 mb-2">Anushka Sharma</h3>
+                <p className="text-orange-500 font-semibold mb-2 text-sm">Content Marketing Team</p>
+                <p className="text-xs text-gray-600">
+                  Contributing to Applaa's mission
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Sneha Goel */}
+            <Card className="text-center border-orange-100 hover:border-orange-300 hover:shadow-xl transition-all duration-300">
+              <CardContent className="pt-6">
+                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-200 bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
+                  <Image 
+                    src="/placeholder-avatar.svg" 
+                    alt="Sneha Goel" 
+                    width={96} 
+                    height={96}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const parent = target.parentElement;
+                      if (parent) {
+                        parent.innerHTML = '<div class="w-full h-full flex items-center justify-center text-orange-500 text-2xl font-bold">SG</div>';
+                      }
+                    }}
+                  />
+                </div>
+                <h3 className="text-lg font-bold text-gray-800 mb-2">Sneha Goel</h3>
+                <p className="text-orange-500 font-semibold mb-2 text-sm">Content Marketing Team</p>
+                <p className="text-xs text-gray-600">
+                  Contributing to Applaa's mission
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Ravi Kumar */}
+            <Card className="text-center border-orange-100 hover:border-orange-300 hover:shadow-xl transition-all duration-300">
+              <CardContent className="pt-6">
+                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-200 bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
+                  <Image 
+                    src="/placeholder-avatar.svg" 
+                    alt="Ravi Kumar" 
+                    width={96} 
+                    height={96}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const parent = target.parentElement;
+                      if (parent) {
+                        parent.innerHTML = '<div class="w-full h-full flex items-center justify-center text-orange-500 text-2xl font-bold">RK</div>';
+                      }
+                    }}
+                  />
+                </div>
+                <h3 className="text-lg font-bold text-gray-800 mb-2">Ravi Kumar</h3>
+                <p className="text-orange-500 font-semibold mb-2 text-sm">Marketing & Social Media</p>
                 <p className="text-xs text-gray-600">
                   Contributing to Applaa's mission
                 </p>
@@ -635,68 +635,12 @@ export default function AboutPage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {/* Hendrik Klein */}
-            <Card className="text-center border-orange-100 hover:border-orange-300 hover:shadow-xl transition-all duration-300 bg-white">
-              <CardContent className="pt-6">
-                <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-200 bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
-                  <Image 
-                    src="/placeholder-avatar.svg" 
-                    alt="Hendrik Klein" 
-                    width={128} 
-                    height={128}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                      const parent = target.parentElement;
-                      if (parent) {
-                        parent.innerHTML = '<div class="w-full h-full flex items-center justify-center text-orange-500 text-3xl font-bold">HK</div>';
-                      }
-                    }}
-                  />
-                </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">Hendrik Klein</h3>
-                <p className="text-orange-500 font-semibold mb-3">Principal Advisor - Investment</p>
-                <p className="text-sm text-gray-600">
-                  3x founder. 20 years in Trading. 15 years in crypto. Landesbank Baden, Da Vinci Capital Partners.
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Pradeep Joglekar */}
-            <Card className="text-center border-orange-100 hover:border-orange-300 hover:shadow-xl transition-all duration-300 bg-white">
-              <CardContent className="pt-6">
-                <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-200 bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
-                  <Image 
-                    src="/placeholder-avatar.svg" 
-                    alt="Pradeep Joglekar" 
-                    width={128} 
-                    height={128}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                      const parent = target.parentElement;
-                      if (parent) {
-                        parent.innerHTML = '<div class="w-full h-full flex items-center justify-center text-orange-500 text-3xl font-bold">PJ</div>';
-                      }
-                    }}
-                  />
-                </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">Pradeep Joglekar</h3>
-                <p className="text-orange-500 font-semibold mb-3">Principal Advisor - Partnerships</p>
-                <p className="text-sm text-gray-600">
-                  35+ years in leadership, Fintech. Citi, Hinduja Group, Hexaware, Cap Gemini
-                </p>
-              </CardContent>
-            </Card>
-
             {/* Walter Aldana */}
             <Card className="text-center border-orange-100 hover:border-orange-300 hover:shadow-xl transition-all duration-300 bg-white">
               <CardContent className="pt-6">
                 <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-200 bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
                   <Image 
-                    src="/placeholder-avatar.svg" 
+                    src="/pics/walter.jpeg" 
                     alt="Walter Aldana" 
                     width={128} 
                     height={128}
@@ -712,9 +656,65 @@ export default function AboutPage() {
                   />
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-2">Walter Aldana</h3>
-                <p className="text-orange-500 font-semibold mb-3">Advisor</p>
+                <p className="text-orange-500 font-semibold mb-3">Principal Advisor - Growth & Investments</p>
                 <p className="text-sm text-gray-600">
-                  Strategic advisor with expertise in technology and business development.
+                  MIT Engg, Stanford MBA. Ex-VP of Partnerships, Groq. VP of Alliances at Snowflake, Dataiku, Goldman Sachs. 25+ years in BD, Sales, Partnerships. 10+ years in start-ups.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Hendrik Klein */}
+            <Card className="text-center border-orange-100 hover:border-orange-300 hover:shadow-xl transition-all duration-300 bg-white">
+              <CardContent className="pt-6">
+                <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-200 bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
+                  <Image 
+                    src="/pics/hendrik.jpeg" 
+                    alt="Hendrik Klein" 
+                    width={128} 
+                    height={128}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const parent = target.parentElement;
+                      if (parent) {
+                        parent.innerHTML = '<div class="w-full h-full flex items-center justify-center text-orange-500 text-3xl font-bold">HK</div>';
+                      }
+                    }}
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-gray-800 mb-2">Hendrik Klein</h3>
+                <p className="text-orange-500 font-semibold mb-3">Principal Advisor - Investments</p>
+                <p className="text-sm text-gray-600">
+                  3x founder. 20 years in Trading. Landesbank Baden, Da Vinci Capital Partners.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Pradeep Joglekar */}
+            <Card className="text-center border-orange-100 hover:border-orange-300 hover:shadow-xl transition-all duration-300 bg-white">
+              <CardContent className="pt-6">
+                <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-200 bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
+                  <Image 
+                    src="/pics/pradeep.png" 
+                    alt="Pradeep Joglekar" 
+                    width={128} 
+                    height={128}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const parent = target.parentElement;
+                      if (parent) {
+                        parent.innerHTML = '<div class="w-full h-full flex items-center justify-center text-orange-500 text-3xl font-bold">PJ</div>';
+                      }
+                    }}
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-gray-800 mb-2">Pradeep Joglekar</h3>
+                <p className="text-orange-500 font-semibold mb-3">Principal Advisor - Strategy</p>
+                <p className="text-sm text-gray-600">
+                  35+ years in leadership, Fintech. Citi, Hinduja Group, Hexaware, Cap Gemini
                 </p>
               </CardContent>
             </Card>
@@ -733,7 +733,7 @@ export default function AboutPage() {
               </span>
             </div>
             <p className="text-gray-600 mb-4">
-              The ultimate kid-safe social network for learning AI, building games, and expressing creativity.
+              The ultimate kid-safe gaming hub: Use AI to build games and express creativity in a safe space.
             </p>
             <p className="text-sm text-gray-500">
               © 2024 Applaa. All rights reserved.
