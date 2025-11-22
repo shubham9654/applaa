@@ -38,8 +38,8 @@ export default function AcademyPage() {
   // Course categories
   const categories = [
     { id: 'all', name: 'All Courses', icon: BookOpen, color: 'orange' },
-    { id: 'ai-basics', name: 'AI Basics', icon: Brain, color: 'pink' },
-    { id: 'game-dev', name: 'Game Development', icon: Code, color: 'purple' },
+    { id: 'ai-basics', name: 'AI Basics', icon: Brain, color: 'orange' },
+    { id: 'game-dev', name: 'Game Development', icon: Code, color: 'orange' },
     { id: 'advanced-ai', name: 'Advanced AI', icon: Bot, color: 'blue' },
     { id: 'creative', name: 'Creative', icon: Palette, color: 'green' },
     { id: 'robotics', name: 'Robotics', icon: Zap, color: 'red' }
@@ -182,27 +182,27 @@ export default function AcademyPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-pink-50 to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-orange-100">
       {/* Header */}
       <div className="bg-white/80 backdrop-blur-sm border-b border-orange-100 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-pink-500 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
                 <Sparkles className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
+              <span className="text-xl font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
                 Applaa
               </span>
             </Link>
             <div className="flex items-center space-x-4">
               <Link href="/games">
-                <Button variant="outline" className="border-pink-200 text-pink-600 hover:bg-pink-50">
+                <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50">
                   Game Hub
                 </Button>
               </Link>
               <Link href="/profile">
-                <Button variant="outline" className="border-purple-200 text-purple-600 hover:bg-purple-50">
+                <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50">
                   My Profile
                 </Button>
               </Link>
@@ -215,7 +215,7 @@ export default function AcademyPage() {
         {/* Page Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-orange-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
               AI Academy
             </span>
           </h1>
@@ -225,7 +225,7 @@ export default function AcademyPage() {
         </div>
 
         {/* Learning Stats */}
-        <Card className="mb-8 border-gradient-to-r from-orange-100 to-pink-100">
+        <Card className="mb-8 border-orange-100">
           <CardContent className="p-6">
             <h2 className="text-2xl font-bold mb-6 flex items-center">
               <GraduationCap className="w-6 h-6 mr-2 text-orange-600" />
@@ -237,12 +237,12 @@ export default function AcademyPage() {
                 <div className="text-2xl font-bold text-orange-600">{learningStats.totalCourses}</div>
                 <div className="text-sm text-gray-600">Total Courses</div>
               </div>
-              <div className="text-center p-4 bg-pink-50 rounded-lg">
-                <div className="text-2xl font-bold text-pink-600">{learningStats.enrolledCourses}</div>
+              <div className="text-center p-4 bg-orange-50 rounded-lg">
+                <div className="text-2xl font-bold text-orange-600">{learningStats.enrolledCourses}</div>
                 <div className="text-sm text-gray-600">Enrolled</div>
               </div>
-              <div className="text-center p-4 bg-purple-50 rounded-lg">
-                <div className="text-2xl font-bold text-purple-600">{learningStats.completedCourses}</div>
+              <div className="text-center p-4 bg-orange-50 rounded-lg">
+                <div className="text-2xl font-bold text-orange-600">{learningStats.completedCourses}</div>
                 <div className="text-sm text-gray-600">Completed</div>
               </div>
               <div className="text-center p-4 bg-blue-50 rounded-lg">
@@ -287,7 +287,7 @@ export default function AcademyPage() {
                   onClick={() => setSelectedCategory(category.id)}
                   className={`whitespace-nowrap ${
                     selectedCategory === category.id
-                      ? 'bg-gradient-to-r from-orange-500 to-pink-500'
+                      ? 'bg-gradient-to-r from-orange-500 to-orange-600'
                       : 'border-orange-200 text-orange-600 hover:bg-orange-50'
                   }`}
                 >
@@ -386,14 +386,14 @@ export default function AcademyPage() {
                   {/* Action Buttons */}
                   <div className="flex space-x-2">
                     {course.status === 'available' && (
-                      <Button className="flex-1 bg-gradient-to-r from-orange-500 to-pink-500">
+                      <Button className="flex-1 bg-gradient-to-r from-orange-500 to-orange-600">
                         <Play className="w-4 h-4 mr-2" />
                         Start Learning
                       </Button>
                     )}
                     
                     {course.status === 'enrolled' && (
-                      <Button className="flex-1 bg-gradient-to-r from-orange-500 to-pink-500">
+                      <Button className="flex-1 bg-gradient-to-r from-orange-500 to-orange-600">
                         <Play className="w-4 h-4 mr-2" />
                         Continue Learning
                       </Button>
@@ -429,7 +429,7 @@ export default function AcademyPage() {
         )}
 
         {/* Call to Action */}
-        <Card className="mt-12 border-gradient-to-r from-purple-100 to-pink-100">
+        <Card className="mt-12 border-orange-100">
           <CardContent className="p-8 text-center">
             <div className="text-4xl mb-4">🚀</div>
             <h3 className="text-2xl font-bold mb-4">Ready to Start Your AI Adventure?</h3>
@@ -437,11 +437,11 @@ export default function AcademyPage() {
               Join thousands of kids learning AI, creating games, and building the future together!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-to-r from-orange-500 to-pink-500">
+              <Button size="lg" className="bg-gradient-to-r from-orange-500 to-orange-600">
                 <Rocket className="w-5 h-5 mr-2" />
                 Explore All Courses
               </Button>
-              <Button size="lg" variant="outline" className="border-purple-200 text-purple-600">
+              <Button size="lg" variant="outline" className="border-orange-200 text-orange-600">
                 <Zap className="w-5 h-5 mr-2" />
                 View Learning Path
               </Button>

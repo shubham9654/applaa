@@ -12,7 +12,6 @@ import {
   Sparkles, 
   Eye,
   EyeOff,
-  Mail,
   Lock,
   User,
   Shield,
@@ -33,7 +32,6 @@ export default function LoginPage() {
   }, [])
   
   const [showPassword, setShowPassword] = useState(false)
-  const [isKidLogin, setIsKidLogin] = useState(true)
   const [isLoading, setIsLoading] = useState(false)
   
   const [formData, setFormData] = useState({
@@ -47,7 +45,7 @@ export default function LoginPage() {
     const newErrors: Record<string, string> = {}
     
     if (!formData.username.trim()) {
-      newErrors.username = isKidLogin ? 'Username is required' : 'Email is required'
+      newErrors.username = 'Username is required'
     }
     
     if (!formData.password) {
@@ -67,7 +65,7 @@ export default function LoginPage() {
     
     try {
       // Here you would make an API call to authenticate
-      console.log('Login attempt:', { ...formData, isKidLogin })
+      console.log('Login attempt:', formData)
       
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000))
@@ -82,16 +80,16 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-pink-50 to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-orange-100">
       {/* Header */}
       <div className="bg-white/80 backdrop-blur-sm border-b border-orange-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-pink-500 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
                 <Sparkles className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
+              <span className="text-xl font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
                 Applaa
               </span>
             </Link>
@@ -115,61 +113,28 @@ export default function LoginPage() {
           </Alert>
         )}
 
-        {/* Login Type Selector */}
-        <div className="flex justify-center mb-6">
-          <div className="bg-white rounded-lg p-1 shadow-sm border border-orange-100">
-            <button
-              onClick={() => setIsKidLogin(true)}
-              className={`px-6 py-2 rounded-md text-sm font-medium transition-all ${
-                isKidLogin
-                  ? 'bg-gradient-to-r from-orange-500 to-pink-500 text-white'
-                  : 'text-gray-600 hover:text-orange-600'
-              }`}
-            >
-              Kid Login
-            </button>
-            <button
-              onClick={() => setIsKidLogin(false)}
-              className={`px-6 py-2 rounded-md text-sm font-medium transition-all ${
-                !isKidLogin
-                  ? 'bg-gradient-to-r from-orange-500 to-pink-500 text-white'
-                  : 'text-gray-600 hover:text-orange-600'
-              }`}
-            >
-              Parent Login
-            </button>
-          </div>
-        </div>
-
         {/* Login Form */}
         <Card className="border-orange-100">
           <CardHeader className="text-center">
-            <CardTitle className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
+            <CardTitle className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
               Welcome Back!
             </CardTitle>
             <CardDescription>
-              {isKidLogin 
-                ? "Enter your username and password to continue your adventure"
-                : "Parent login - manage your child's account and settings"
-              }
+              Enter your username and password to continue your adventure
             </CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleLogin} className="space-y-4">
-              {/* Username/Email */}
+              {/* Username */}
               <div className="space-y-2">
                 <Label htmlFor="username" className="flex items-center">
-                  {isKidLogin ? (
-                    <User className="w-4 h-4 mr-2 text-orange-600" />
-                  ) : (
-                    <Mail className="w-4 h-4 mr-2 text-orange-600" />
-                  )}
-                  {isKidLogin ? 'Username' : 'Email Address'}
+                  <User className="w-4 h-4 mr-2 text-orange-600" />
+                  Username
                 </Label>
                 <Input
                   id="username"
-                  type={isKidLogin ? "text" : "email"}
-                  placeholder={isKidLogin ? "CoolKid123" : "parent@example.com"}
+                  type="text"
+                  placeholder="CoolKid123"
                   value={formData.username}
                   onChange={(e) => setFormData({...formData, username: e.target.value})}
                   className="border-orange-200 focus:border-orange-400"
@@ -234,32 +199,20 @@ export default function LoginPage() {
               <Button 
                 type="submit"
                 disabled={isLoading}
-                className="w-full bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600"
+                className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700"
                 size="lg"
               >
                 {isLoading ? 'Logging in...' : 'Login to Your Account'}
               </Button>
             </form>
 
-            {/* Safety Notice for Kids */}
-            {isKidLogin && (
-              <Alert className="mt-6 border-orange-200 bg-orange-50">
-                <Shield className="w-4 h-4 text-orange-600" />
-                <AlertDescription className="text-orange-800 text-sm">
-                  <strong>Hey Kids!</strong> If you forgot your password, ask your parent to help you reset it.
-                </AlertDescription>
-              </Alert>
-            )}
-
-            {/* Parent Help Notice */}
-            {!isKidLogin && (
-              <Alert className="mt-6 border-blue-200 bg-blue-50">
-                <Shield className="w-4 h-4 text-blue-600" />
-                <AlertDescription className="text-blue-800 text-sm">
-                  <strong>Parents:</strong> Use the email address you provided during signup to login.
-                </AlertDescription>
-              </Alert>
-            )}
+            {/* Safety Notice */}
+            <Alert className="mt-6 border-orange-200 bg-orange-50">
+              <Shield className="w-4 h-4 text-orange-600" />
+              <AlertDescription className="text-orange-800 text-sm">
+                <strong>Safety First!</strong> If you forgot your password, use the "Forgot password?" link above.
+              </AlertDescription>
+            </Alert>
           </CardContent>
         </Card>
 

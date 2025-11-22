@@ -86,16 +86,16 @@ export default function ProfilePage() {
   const xpProgress = (user.xp / user.nextLevelXp) * 100
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-pink-50 to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-orange-100">
       {/* Header */}
       <div className="bg-white/80 backdrop-blur-sm border-b border-orange-100 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-pink-500 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
                 <Sparkles className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
+              <span className="text-xl font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
                 Applaa
               </span>
             </Link>
@@ -106,7 +106,7 @@ export default function ProfilePage() {
                 </Button>
               </Link>
               <Link href="/games">
-                <Button variant="outline" className="border-pink-200 text-pink-600 hover:bg-pink-50">
+                <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50">
                   Game Hub
                 </Button>
               </Link>
@@ -126,7 +126,7 @@ export default function ProfilePage() {
             <div className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6">
               {/* Avatar */}
               <div className="relative">
-                <div className="w-24 h-24 bg-gradient-to-r from-orange-400 to-pink-400 rounded-full flex items-center justify-center text-4xl shadow-lg">
+                <div className="w-24 h-24 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full flex items-center justify-center text-4xl shadow-lg">
                   {user.avatar}
                 </div>
                 <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-2 border-white"></div>
@@ -135,10 +135,10 @@ export default function ProfilePage() {
               {/* User Info */}
               <div className="flex-1 text-center md:text-left">
                 <div className="flex flex-col md:flex-row md:items-center md:space-x-4">
-                  <h1 className="text-3xl font-bold bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
+                  <h1 className="text-3xl font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
                     {user.username}
                   </h1>
-                  <Badge className="mt-2 md:mt-0 bg-gradient-to-r from-orange-500 to-pink-500 text-white">
+                  <Badge className="mt-2 md:mt-0 bg-gradient-to-r from-orange-500 to-orange-600 text-white">
                     Level {user.level}
                   </Badge>
                 </div>
@@ -182,12 +182,12 @@ export default function ProfilePage() {
                 <div className="text-2xl font-bold text-orange-600">{user.level}</div>
                 <div className="text-sm text-gray-600">Level</div>
               </div>
-              <div className="text-center p-3 bg-pink-50 rounded-lg">
-                <div className="text-2xl font-bold text-pink-600">{friends.length}</div>
+              <div className="text-center p-3 bg-orange-50 rounded-lg">
+                <div className="text-2xl font-bold text-orange-600">{friends.length}</div>
                 <div className="text-sm text-gray-600">Friends</div>
               </div>
-              <div className="text-center p-3 bg-purple-50 rounded-lg">
-                <div className="text-2xl font-bold text-purple-600">{createdGames.length}</div>
+              <div className="text-center p-3 bg-orange-50 rounded-lg">
+                <div className="text-2xl font-bold text-orange-600">{createdGames.length}</div>
                 <div className="text-sm text-gray-600">Games</div>
               </div>
               <div className="text-center p-3 bg-blue-50 rounded-lg">
@@ -245,10 +245,10 @@ export default function ProfilePage() {
               </Card>
 
               {/* Quick Stats */}
-              <Card className="border-pink-100">
+              <Card className="border-orange-100">
                 <CardHeader>
                   <CardTitle className="flex items-center">
-                    <TrendingUp className="w-5 h-5 mr-2 text-pink-600" />
+                    <TrendingUp className="w-5 h-5 mr-2 text-orange-600" />
                     This Month
                   </CardTitle>
                 </CardHeader>
@@ -256,19 +256,19 @@ export default function ProfilePage() {
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
                       <span className="text-sm text-gray-600">XP Earned</span>
-                      <span className="font-bold text-pink-600">+450</span>
+                      <span className="font-bold text-orange-600">+450</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-sm text-gray-600">Games Played</span>
-                      <span className="font-bold text-pink-600">23</span>
+                      <span className="font-bold text-orange-600">23</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-sm text-gray-600">Courses Completed</span>
-                      <span className="font-bold text-pink-600">2</span>
+                      <span className="font-bold text-orange-600">2</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-sm text-gray-600">New Friends</span>
-                      <span className="font-bold text-pink-600">5</span>
+                      <span className="font-bold text-orange-600">5</span>
                     </div>
                   </div>
                 </CardContent>
@@ -276,7 +276,7 @@ export default function ProfilePage() {
             </div>
 
             {/* Featured Achievement */}
-            <Card className="border-gradient-to-r from-orange-100 to-pink-100">
+            <Card className="border-orange-100">
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <Crown className="w-5 h-5 mr-2 text-orange-600" />
@@ -342,7 +342,7 @@ export default function ProfilePage() {
           <TabsContent value="games" className="space-y-6">
             <div className="flex justify-between items-center">
               <h2 className="text-2xl font-bold">My Created Games</h2>
-              <Button className="bg-gradient-to-r from-orange-500 to-pink-500">
+              <Button className="bg-gradient-to-r from-orange-500 to-orange-600">
                 <Gamepad2 className="w-4 h-4 mr-2" />
                 Create New Game
               </Button>
@@ -350,11 +350,11 @@ export default function ProfilePage() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {createdGames.map((game) => (
-                <Card key={game.id} className="border-pink-100 hover:shadow-lg transition-shadow">
+                <Card key={game.id} className="border-orange-100 hover:shadow-lg transition-shadow">
                   <CardContent className="p-6">
                     <div className="text-4xl mb-4 text-center">{game.thumbnail}</div>
                     <h3 className="font-bold text-lg mb-2">{game.title}</h3>
-                    <Badge variant="outline" className="mb-3 border-pink-200 text-pink-600">
+                    <Badge variant="outline" className="mb-3 border-orange-200 text-orange-600">
                       {game.category}
                     </Badge>
                     
@@ -391,7 +391,7 @@ export default function ProfilePage() {
           <TabsContent value="friends" className="space-y-6">
             <div className="flex justify-between items-center">
               <h2 className="text-2xl font-bold">My Friends ({friends.length})</h2>
-              <Button variant="outline" className="border-purple-200 text-purple-600">
+              <Button variant="outline" className="border-orange-200 text-orange-600">
                 <Users className="w-4 h-4 mr-2" />
                 Find Friends
               </Button>
@@ -399,11 +399,11 @@ export default function ProfilePage() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {friends.map((friend) => (
-                <Card key={friend.id} className="border-purple-100">
+                <Card key={friend.id} className="border-orange-100">
                   <CardContent className="p-6">
                     <div className="flex items-center space-x-3 mb-4">
                       <div className="relative">
-                        <div className="w-12 h-12 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center text-xl">
+                        <div className="w-12 h-12 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full flex items-center justify-center text-xl">
                           {friend.avatar}
                         </div>
                         <div className={`absolute -bottom-1 -right-1 w-3 h-3 rounded-full border-2 border-white ${
