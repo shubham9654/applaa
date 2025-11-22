@@ -1,29 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 30 30" style="enable-background:new 0 0 30 30;" xml:space="preserve">
-<defs>
-  <style type="text/css">
-    .st194{fill:#2D2D2D;stroke:#FFFFFF;stroke-width:0.6317;stroke-miterlimit:10;}
-    .st23{fill:#FFFFFF;}
-
-    .z-breathe {
-      animation: breathe 2.5s ease-in-out infinite;
-    }
-
-    @keyframes breathe {
-      0%, 100% { opacity: 0.7; }
-      50% { opacity: 1; }
-    }
-  </style>
-</defs>
-
-<g>
-  <path class="st194" d="M24.51,28.51H5.49c-2.21,0-4-1.79-4-4V5.49c0-2.21,1.79-4,4-4h19.03c2.21,0,4,1.79,4,4v19.03
-    C28.51,26.72,26.72,28.51,24.51,28.51z"/>
-  <g class="z-breathe">
-    <path class="st23" d="M15.47,7.1l-1.3,1.85c-0.2,0.29-0.54,0.47-0.9,0.47h-7.1V7.09C6.16,7.1,15.47,7.1,15.47,7.1z"/>
-    <polygon class="st23" points="24.3,7.1 13.14,22.91 5.7,22.91 16.86,7.1"/>
-    <path class="st23" d="M14.53,22.91l1.31-1.86c0.2-0.29,0.54-0.47,0.9-0.47h7.09v2.33H14.53z"/>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+  viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+  <defs>
+    <style type="text/css">
+      .sunburst { fill: #FF6B35; }
+    </style>
+  </defs>
+  <!-- Orange sunburst logo with 12 radiating segments -->
+  <g>
+    <!-- Top segment (pointed) -->
+    <path class="sunburst" d="M50,5 L47,20 L53,20 Z"/>
+    <!-- Top-right segments -->
+    <path class="sunburst" d="M53,20 L60,15 L65,25 L58,30 Z"/>
+    <path class="sunburst" d="M58,30 L65,25 L70,35 L63,40 Z"/>
+    <!-- Right segment -->
+    <path class="sunburst" d="M95,50 L80,45 L80,55 Z"/>
+    <!-- Bottom-right segments -->
+    <path class="sunburst" d="M80,55 L80,45 L70,55 L75,65 Z"/>
+    <path class="sunburst" d="M70,55 L63,65 L70,70 L77,60 Z"/>
+    <!-- Bottom segment -->
+    <path class="sunburst" d="M50,95 L47,80 L53,80 Z"/>
+    <!-- Bottom-left segments -->
+    <path class="sunburst" d="M47,80 L40,75 L30,85 L37,90 Z"/>
+    <path class="sunburst" d="M37,70 L30,75 L25,65 L32,60 Z"/>
+    <!-- Left segment -->
+    <path class="sunburst" d="M5,50 L20,55 L20,45 Z"/>
+    <!-- Top-left segments -->
+    <path class="sunburst" d="M20,45 L20,55 L30,40 L25,30 Z"/>
+    <path class="sunburst" d="M30,40 L37,30 L30,25 L23,35 Z"/>
   </g>
-</g>
 </svg>

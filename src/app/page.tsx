@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -76,14 +77,14 @@ export default function Home() {
       <nav className="bg-white/80 backdrop-blur-sm border-b border-orange-100 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-2">
+            <Link href="/" className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
-                <Sparkles className="w-5 h-5 text-white" />
+                <Image src="/logo.svg" alt="Applaa Logo" width={24} height={24} />
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
                 Applaa
               </span>
-            </div>
+            </Link>
             <div className="hidden md:flex items-center space-x-6">
               <Link href="#games" className="text-gray-600 hover:text-orange-600 transition-colors">
                 Games
@@ -93,6 +94,9 @@ export default function Home() {
               </Link>
               <Link href="#safety" className="text-gray-600 hover:text-orange-600 transition-colors">
                 Safety
+              </Link>
+              <Link href="/about" className="text-gray-600 hover:text-orange-600 transition-colors">
+                About Us
               </Link>
               <Link href="/auth/signup" className="text-gray-600 hover:text-orange-600 transition-colors">
                 Sign Up
@@ -1128,7 +1132,7 @@ export default function Home() {
                   <span className="text-orange-600 mr-1">→</span> Net Worth Calculator
                 </h3>
               </CardContent>
-              </Card>
+            </Card>
             </Link>
           </div>
 

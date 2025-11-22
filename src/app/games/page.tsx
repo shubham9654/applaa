@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Input } from '@/components/ui/input'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import Image from 'next/image'
 import { 
   Sparkles, 
   Search,
@@ -213,13 +214,16 @@ export default function GamesPage() {
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
-                <Sparkles className="w-5 h-5 text-white" />
+                <Image src="/logo.svg" alt="Applaa Logo" width={24} height={24} />
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
                 Applaa
               </span>
             </Link>
             <div className="flex items-center space-x-4">
+              <Link href="/about" className="text-gray-600 hover:text-orange-600 transition-colors hidden md:block">
+                About Us
+              </Link>
               <Link href="/academy">
                 <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50">
                   AI Academy
