@@ -63,8 +63,8 @@ export default function Home() {
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-orange-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">
-                Welcome to applaa
+              <span className="bg-linear-to-r from-orange-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">
+                Welcome to Applaa
               </span>
             </h1>
             
@@ -74,13 +74,13 @@ export default function Home() {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/auth/signup">
-                <Button size="lg" className="bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white px-8 py-3 text-lg">
+                <Button size="lg" className="bg-linear-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white px-8 py-3 text-lg">
                   <Rocket className="w-5 h-5 mr-2" />
                   Start Your Adventure
                 </Button>
               </Link>
               <Link href="#features">
-                <Button size="lg" variant="outline" className="border-2 border-orange-200 text-orange-600 hover:bg-orange-50 px-8 py-3 text-lg">
+                <Button size="lg" variant="outline" className="border-2 border-orange-200 text-orange-600 hover:bg-orange-50 hover:text-black px-8 py-3 text-lg">
                   Learn More
                 </Button>
               </Link>
@@ -99,7 +99,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
                 Amazing Features for Young Explorers
               </span>
             </h2>
@@ -112,7 +112,7 @@ export default function Home() {
             {/* AI Academy Card */}
             <Card className="group hover:shadow-xl transition-all duration-300 border-orange-100 hover:border-orange-300">
               <CardHeader className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <div className="w-16 h-16 bg-linear-to-r from-orange-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                   <GraduationCap className="w-8 h-8 text-white" />
                 </div>
                 <CardTitle className="text-xl font-bold text-gray-800">AI Academy</CardTitle>
@@ -150,7 +150,7 @@ export default function Home() {
             {/* Game Hub Card */}
             <Card className="group hover:shadow-xl transition-all duration-300 border-pink-100 hover:border-pink-300">
               <CardHeader className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <div className="w-16 h-16 bg-linear-to-r from-pink-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                   <Gamepad2 className="w-8 h-8 text-white" />
                 </div>
                 <CardTitle className="text-xl font-bold text-gray-800">Game Hub</CardTitle>
@@ -188,7 +188,7 @@ export default function Home() {
             {/* Social Network Card */}
             <Card className="group hover:shadow-xl transition-all duration-300 border-purple-100 hover:border-purple-300">
               <CardHeader className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <div className="w-16 h-16 bg-linear-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                   <Users className="w-8 h-8 text-white" />
                 </div>
                 <CardTitle className="text-xl font-bold text-gray-800">Social Network</CardTitle>
@@ -217,7 +217,7 @@ export default function Home() {
                 </ul>
                 <div className="mt-6">
                   <Badge className="bg-purple-100 text-purple-800 hover:bg-purple-200">
-                    Parent-Approved
+                    Age 8-18
                   </Badge>
                 </div>
               </CardContent>
@@ -227,11 +227,11 @@ export default function Home() {
       </section>
 
       {/* Safety Section */}
-      <section id="safety" className="py-20 bg-gradient-to-r from-orange-50 to-pink-50">
+      <section id="safety" className="py-20 bg-linear-to-r from-orange-50 to-pink-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
                 Safety First, Always
               </span>
             </h2>
@@ -240,7 +240,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:mx-20">
             <div className="text-center">
               <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                 <Shield className="w-8 h-8 text-orange-500" />
@@ -271,15 +271,7 @@ export default function Home() {
               </p>
             </div>
             
-            <div className="text-center">
-              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                <Heart className="w-8 h-8 text-red-500" />
-              </div>
-              <h3 className="font-bold text-gray-800 mb-2">Parent Dashboard</h3>
-              <p className="text-sm text-gray-600">
-                Parents can monitor activity and control privacy settings
-              </p>
-            </div>
+            
           </div>
 
           <div className="mt-12 text-center">
@@ -290,7 +282,7 @@ export default function Home() {
                   <h3 className="text-lg font-bold text-gray-800">Safety Commitment</h3>
                 </div>
                 <p className="text-gray-600 mb-4">
-                  applaa exceeds industry standards for online safety. We're COPPA-compliant, 
+                  Applaa exceeds industry standards for online safety. We're COPPA-compliant, 
                   use advanced content filtering, and work with child safety experts to ensure 
                   your kids can explore, learn, and grow in a protected digital playground.
                 </p>
@@ -312,13 +304,13 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-orange-600 via-pink-600 to-purple-600">
+      <section className="py-20 bg-linear-to-r from-orange-600 via-pink-600 to-purple-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Ready to Start Your Adventure?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Join thousands of kids who are already learning, creating, and making friends on applaa!
+            Join thousands of kids who are already learning, creating, and making friends on Applaa!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/auth/signup">
@@ -328,7 +320,7 @@ export default function Home() {
               </Button>
             </Link>
             <Link href="/academy">
-              <Button size="lg" variant="outline" className="border-white hover:bg-white/10 px-8 py-3 text-lg text-orange-600">
+              <Button size="lg" variant="outline" className="border-orange-600 bg-white px-8 py-3 text-lg hover:text-orange-600">
                 Explore AI Academy
               </Button>
             </Link>
@@ -339,52 +331,23 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="flex flex-col md:flex-row justify-center items-center">
             <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-pink-500 rounded-lg flex items-center justify-center">
+              <div className="flex justify-center items-center space-x-2 mb-4">
+                <div className="w-8 h-8 bg-linear-to-r from-orange-500 to-pink-500 rounded-lg flex items-center justify-center">
                   <Sparkles className="w-5 h-5 text-white" />
                 </div>
-                <span className="text-xl font-bold">applaa</span>
+                <span className="text-xl font-bold">Applaa</span>
               </div>
               <p className="text-gray-400 text-sm">
                 The safe, fun social network where kids learn AI and build amazing things together.
               </p>
             </div>
             
-            <div>
-              <h4 className="font-bold mb-4">Features</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link href="/academy" className="hover:text-orange-400">AI Academy</Link></li>
-                <li><Link href="/games" className="hover:text-orange-400">Game Hub</Link></li>
-                <li><Link href="/profile" className="hover:text-orange-400">Profiles</Link></li>
-                <li><Link href="/friends" className="hover:text-orange-400">Friends</Link></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="font-bold mb-4">Safety</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link href="/safety" className="hover:text-orange-400">Safety Center</Link></li>
-                <li><Link href="/parents" className="hover:text-orange-400">Parent Guide</Link></li>
-                <li><Link href="/privacy" className="hover:text-orange-400">Privacy Policy</Link></li>
-                <li><Link href="/terms" className="hover:text-orange-400">Terms of Use</Link></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="font-bold mb-4">Support</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link href="/help" className="hover:text-orange-400">Help Center</Link></li>
-                <li><Link href="/contact" className="hover:text-orange-400">Contact Us</Link></li>
-                <li><Link href="/about" className="hover:text-orange-400">About Us</Link></li>
-                <li><Link href="/careers" className="hover:text-orange-400">Careers</Link></li>
-              </ul>
-            </div>
           </div>
           
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-            <p>&copy; 2024 applaa. All rights reserved. Made with ❤️ for kids everywhere.</p>
+            <p>&copy; 2025 Applaa. All rights reserved. Made with ❤️ for kids everywhere.</p>
           </div>
         </div>
       </footer>

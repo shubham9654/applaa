@@ -96,7 +96,7 @@ export default function ProfilePage() {
                 <Sparkles className="w-5 h-5 text-white" />
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
-                applaa
+                Applaa
               </span>
             </Link>
             <div className="flex items-center space-x-4">

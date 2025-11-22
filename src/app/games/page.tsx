@@ -216,7 +216,7 @@ export default function GamesPage() {
                 <Sparkles className="w-5 h-5 text-white" />
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
-                applaa
+                Applaa
               </span>
             </Link>
             <div className="flex items-center space-x-4">
@@ -504,7 +504,7 @@ export default function GamesPage() {
                 <div className="text-3xl mb-3">🎨</div>
                 <h3 className="font-bold mb-2">Create Your Own Game!</h3>
                 <p className="text-sm text-gray-600 mb-4">
-                  Share your creativity with the applaa community
+                  Share your creativity with the Applaa community
                 </p>
                 <Button className="w-full bg-gradient-to-r from-pink-500 to-purple-500">
                   <Gamepad2 className="w-4 h-4 mr-2" />

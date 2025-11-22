@@ -171,7 +171,7 @@ export default function SignupPage() {
                 <Sparkles className="w-5 h-5 text-white" />
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
-                applaa
+                Applaa
               </span>
             </Link>
             <Link href="/auth/login">
@@ -207,7 +207,7 @@ export default function SignupPage() {
         <Alert className="mb-6 border-orange-200 bg-orange-50">
           <Shield className="w-4 h-4 text-orange-600" />
           <AlertDescription className="text-orange-800">
-            <strong>Safety First!</strong> applaa requires parent approval for all accounts. 
+            <strong>Safety First!</strong> Applaa requires parent approval for all accounts. 
             Your parent will receive an email to confirm and approve your account.
           </AlertDescription>
         </Alert>

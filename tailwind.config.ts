@@ -11,7 +11,7 @@ const config: Config = {
   theme: {
         extend: {
                 colors: {
-                        // applaa brand colors - kid-friendly orange/pink/purple theme
+                        // Applaa brand colors - kid-friendly orange/pink/purple theme
                         orange: {
                                 50: '#fff7ed',
                                 100: '#ffedd5',

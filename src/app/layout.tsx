@@ -14,23 +14,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "applaa — The ultimate kid-safe social network",
+  title: "Applaa — The ultimate kid-safe social network",
   description: "The ultimate kid-safe social network: Learn AI, build games, and express creativity in a parent-approved space.",
-  keywords: ["applaa", "kids", "AI", "games", "education", "social", "parent-approved"],
-  authors: [{ name: "applaa Team" }],
+  keywords: ["Applaa", "kids", "AI", "games", "education", "social", "parent-approved"],
+  authors: [{ name: "Applaa Team" }],
   icons: {
     icon: "/favicon.ico",
   },
   openGraph: {
-    title: "applaa — Learn AI & Build Games",
+    title: "Applaa — Learn AI & Build Games",
     description: "The ultimate kid-safe social network: Learn AI, build games, and express creativity in a parent-approved space.",
-    url: "https://applaa.local",
-    siteName: "applaa",
+    url: "https://Applaa.local",
+    siteName: "Applaa",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "applaa — Learn AI & Build Games",
+    title: "Applaa — Learn AI & Build Games",
     description: "The ultimate kid-safe social network: Learn AI, build games, and express creativity in a parent-approved space.",
   },
 };

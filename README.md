@@ -1,4 +1,4 @@
-# 🚀 Welcome to applaa
+# 🚀 Welcome to Applaa
 
 The ultimate kid-safe social network: Learn AI, build games, and express creativity in a parent-approved space.
 
@@ -72,9 +72,9 @@ npm start
 
 Open [http://localhost:3000](http://localhost:3000) to see your application running.
 
-## About applaa
+## About Applaa
 
-This scaffold is adapted for the applaa project — a kid-first platform focused on safety, creativity, and learning. Use this codebase to build features that help children learn AI concepts, create games, and safely interact in a parent-approved environment.
+This scaffold is adapted for the Applaa project — a kid-first platform focused on safety, creativity, and learning. Use this codebase to build features that help children learn AI concepts, create games, and safely interact in a parent-approved environment.
 
 ## 📁 Project Structure
 
@@ -121,12 +121,12 @@ This scaffold includes a comprehensive set of modern web development tools:
 - **Type Safety**: End-to-end TypeScript with Zod validation
 - **Essential Hooks**: 100+ useful React hooks with ReactUse for common patterns
 
-## Get Started with applaa
+## Get Started with Applaa
 
-1. **Clone this scaffold** to jumpstart your applaa project
+1. **Clone this scaffold** to jumpstart your Applaa project
 2. **Start building** features for kids: games, AI lessons, and safe social experiences
 3. **Deploy with confidence** using the production-ready setup
 
 ---
 
-Built with ❤️ for kids and parents. Powered by applaa 🧩
+Built with ❤️ for kids and parents. Powered by Applaa 🧩
