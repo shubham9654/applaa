@@ -19,9 +19,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
-                <Image src="/logo.svg" alt="Applaa Logo" width={24} height={24} />
-              </div>
+              <Image src="/applaa.png" alt="Applaa Logo" width={32} height={32} />
               <span className="text-xl font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
                 Applaa
               </span>
@@ -174,40 +172,12 @@ export default function AboutPage() {
           </div>
 
           <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-            {/* Rahul Bachina */}
-            <Card className="text-center border-orange-100 hover:border-orange-300 hover:shadow-xl transition-all duration-300">
-              <CardContent className="pt-6">
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-200 bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
-                  <Image 
-                    src="/placeholder-avatar.svg" 
-                    alt="Rahul Bachina" 
-                    width={96} 
-                    height={96}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                      const parent = target.parentElement;
-                      if (parent) {
-                        parent.innerHTML = '<div class="w-full h-full flex items-center justify-center text-orange-500 text-2xl font-bold">RB</div>';
-                      }
-                    }}
-                  />
-                </div>
-                <h3 className="text-lg font-bold text-gray-800 mb-2">Rahul Bachina</h3>
-                <p className="text-orange-500 font-semibold mb-2 text-sm">Co-Founder & CTO</p>
-                <p className="text-xs text-gray-600">
-                  2x founder and 22+ years in technology. Cap Gemini, Accenture, Microsoft, Bupa, Avanade
-                </p>
-              </CardContent>
-            </Card>
-
             {/* Raj Muppala */}
             <Card className="text-center border-orange-100 hover:border-orange-300 hover:shadow-xl transition-all duration-300">
               <CardContent className="pt-6">
                 <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-200 bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
                   <Image 
-                    src="/placeholder-avatar.svg" 
+                    src="/pics/raj.png" 
                     alt="Raj Muppala" 
                     width={96} 
                     height={96}
@@ -230,12 +200,40 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
+            {/* Rahul Bachina */}
+            <Card className="text-center border-orange-100 hover:border-orange-300 hover:shadow-xl transition-all duration-300">
+              <CardContent className="pt-6">
+                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-200 bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
+                  <Image 
+                    src="/pics/rahul.jpeg" 
+                    alt="Rahul Bachina" 
+                    width={96} 
+                    height={96}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const parent = target.parentElement;
+                      if (parent) {
+                        parent.innerHTML = '<div class="w-full h-full flex items-center justify-center text-orange-500 text-2xl font-bold">RB</div>';
+                      }
+                    }}
+                  />
+                </div>
+                <h3 className="text-lg font-bold text-gray-800 mb-2">Rahul Bachina</h3>
+                <p className="text-orange-500 font-semibold mb-2 text-sm">Co-Founder & CTO</p>
+                <p className="text-xs text-gray-600">
+                  2x founder and 22+ years in technology. Cap Gemini, Accenture, Microsoft, Bupa, Avanade
+                </p>
+              </CardContent>
+            </Card>
+
             {/* Siva Boppana */}
             <Card className="text-center border-orange-100 hover:border-orange-300 hover:shadow-xl transition-all duration-300">
               <CardContent className="pt-6">
                 <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-200 bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
                   <Image 
-                    src="/placeholder-avatar.svg" 
+                    src="/pics/siva.jpeg" 
                     alt="Siva Boppana" 
                     width={96} 
                     height={96}
@@ -263,7 +261,7 @@ export default function AboutPage() {
               <CardContent className="pt-6">
                 <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-200 bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
                   <Image 
-                    src="/placeholder-avatar.svg" 
+                    src="/pics/mithun.jpeg" 
                     alt="Mithun Majumdar" 
                     width={96} 
                     height={96}
@@ -729,9 +727,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="flex items-center justify-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
-                <Image src="/logo.svg" alt="Applaa Logo" width={24} height={24} />
-              </div>
+              <Image src="/applaa.png" alt="Applaa Logo" width={32} height={32} />
               <span className="text-xl font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
                 Applaa
               </span>

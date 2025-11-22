@@ -6,7 +6,7 @@
       .sunburst { fill: #FF6B35; }
     </style>
   </defs>
-  <!-- Orange sunburst logo with 12 radiating segments -->
+  <!-- Orange sunburst logo with 12 radiating segments - transparent background -->
   <g>
     <!-- Top segment (pointed) -->
     <path class="sunburst" d="M50,5 L47,20 L53,20 Z"/>

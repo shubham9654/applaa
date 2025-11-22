@@ -27,9 +27,9 @@ const getGameUrl = (gameName: string): string => {
     'Ping Pong': 'pingpong',
     'Skateboard Extreme': 'skateboardextreme',
     'Memory Match': 'memorymatch',
-    'Words Finding': 'wordsfinding',
-    'Infinite Runner': 'infinitrunner',
-    'Year 9 Maths Tracker': 'year9mathstracker',
+    'Words Finding': 'words-finding',
+    'Infinite Runner': 'infiniterunner',
+    'Year 9 Maths Tracker': 'year9maths',
     'Solitaire Collection': 'solitairecollection',
     'Spot The Difference': 'spotthedifference',
     'Your Todos List': 'yourtodoslist',
@@ -78,9 +78,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
-                <Image src="/logo.svg" alt="Applaa Logo" width={24} height={24} />
-              </div>
+              <Image src="/applaa.png" alt="Applaa Logo" width={32} height={32} />
               <span className="text-xl font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
                 Applaa
               </span>
@@ -369,7 +367,47 @@ export default function Home() {
               </Card>
             </Link>
 
-            {/* Game Tile 2 - Rock Paper Scissor */}
+            {/* Game Tile 2 - Snake */}
+            <Link href={getGameUrl('Snake')} target="_blank" rel="noopener noreferrer">
+              <Card className="group hover:shadow-2xl hover:scale-105 transition-all duration-300 border-orange-100 hover:border-orange-300 cursor-pointer overflow-hidden">
+                <div className="aspect-square bg-gradient-to-br from-gray-900 via-black to-gray-900 flex items-center justify-center relative overflow-hidden border-2 border-green-500">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.2),transparent_70%)]"></div>
+                  <div className="relative z-10 text-3xl md:text-4xl transform group-hover:scale-110 transition-transform">🐍</div>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <div className="w-4 h-4 bg-green-500 rounded-sm transform rotate-45"></div>
+                    <div className="absolute top-4 left-0 w-3 h-3 bg-red-500 rounded-full"></div>
+                    <div className="absolute top-8 left-0 w-3 h-3 bg-red-500 rounded-full"></div>
+                    <div className="absolute top-12 left-0 w-3 h-3 bg-red-500 rounded-full"></div>
+                  </div>
+                </div>
+                <CardContent className="p-4">
+                  <h3 className="font-bold text-sm md:text-base text-gray-800 group-hover:text-orange-600 transition-colors flex items-center">
+                    <span className="text-orange-600 mr-1">→</span> Snake
+                  </h3>
+                </CardContent>
+              </Card>
+            </Link>
+
+            {/* Game Tile 3 - Abstract Speedster */}
+            <Link href={getGameUrl('Abstract Speedster')} target="_blank" rel="noopener noreferrer">
+              <Card className="group hover:shadow-2xl hover:scale-105 transition-all duration-300 border-orange-100 hover:border-orange-300 cursor-pointer overflow-hidden">
+                <div className="aspect-square bg-gradient-to-br from-gray-800 via-gray-900 to-black flex items-center justify-center relative overflow-hidden border-2 border-blue-400">
+                  <div className="absolute inset-0 bg-[linear-gradient(0deg,transparent_0%,rgba(255,255,255,0.1)_50%,transparent_100%)] bg-[length:100%_20px]"></div>
+                  <div className="relative z-10 text-3xl md:text-4xl transform group-hover:scale-110 transition-transform">🏎️</div>
+                  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-purple-500 rounded shadow-lg"></div>
+                  <div className="absolute bottom-12 left-1/4 w-6 h-6 bg-yellow-400 rounded"></div>
+                  <div className="absolute bottom-12 right-1/4 w-6 h-6 bg-orange-500 rounded"></div>
+                  <div className="absolute top-2 left-2 right-2 text-blue-300 text-xs">Use LEFT/RIGHT or A/D</div>
+                </div>
+                <CardContent className="p-4">
+                  <h3 className="font-bold text-sm md:text-base text-gray-800 group-hover:text-orange-600 transition-colors flex items-center">
+                    <span className="text-orange-600 mr-1">→</span> Abstract Speedster
+                  </h3>
+                </CardContent>
+              </Card>
+            </Link>
+
+            {/* Game Tile 4 - Rock Paper Scissor */}
             <Link href={getGameUrl('Rock Paper Scissor')} target="_blank" rel="noopener noreferrer">
               <Card className="group hover:shadow-2xl hover:scale-105 transition-all duration-300 border-orange-100 hover:border-orange-300 cursor-pointer overflow-hidden">
                 <div className="aspect-square bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center relative overflow-hidden">
@@ -825,26 +863,7 @@ export default function Home() {
               </Card>
             </Link>
 
-            {/* Game Tile 27 - Abstract Speedster */}
-            <Link href={getGameUrl('Abstract Speedster')} target="_blank" rel="noopener noreferrer">
-              <Card className="group hover:shadow-2xl hover:scale-105 transition-all duration-300 border-orange-100 hover:border-orange-300 cursor-pointer overflow-hidden">
-              <div className="aspect-square bg-gradient-to-br from-gray-800 via-gray-900 to-black flex items-center justify-center relative overflow-hidden border-2 border-blue-400">
-                <div className="absolute inset-0 bg-[linear-gradient(0deg,transparent_0%,rgba(255,255,255,0.1)_50%,transparent_100%)] bg-[length:100%_20px]"></div>
-                <div className="relative z-10 text-3xl md:text-4xl transform group-hover:scale-110 transition-transform">🏎️</div>
-                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-purple-500 rounded shadow-lg"></div>
-                <div className="absolute bottom-12 left-1/4 w-6 h-6 bg-yellow-400 rounded"></div>
-                <div className="absolute bottom-12 right-1/4 w-6 h-6 bg-orange-500 rounded"></div>
-                <div className="absolute top-2 left-2 right-2 text-blue-300 text-xs">Use LEFT/RIGHT or A/D</div>
-              </div>
-              <CardContent className="p-4">
-                <h3 className="font-bold text-sm md:text-base text-gray-800 group-hover:text-orange-600 transition-colors flex items-center">
-                  <span className="text-orange-600 mr-1">→</span> Abstract Speedster
-                </h3>
-              </CardContent>
-              </Card>
-            </Link>
-
-            {/* Game Tile 28 - Mono-Fleet */}
+            {/* Game Tile 27 - Mono-Fleet */}
             <Link href={getGameUrl('Mono-Fleet')} target="_blank" rel="noopener noreferrer">
               <Card className="group hover:shadow-2xl hover:scale-105 transition-all duration-300 border-orange-100 hover:border-orange-300 cursor-pointer overflow-hidden">
               <div className="aspect-square bg-gradient-to-br from-gray-900 via-black to-gray-900 flex items-center justify-center relative overflow-hidden border-2 border-blue-400">
@@ -865,28 +884,7 @@ export default function Home() {
               </Card>
             </Link>
 
-            {/* Game Tile 29 - Snake */}
-            <Link href={getGameUrl('Snake')} target="_blank" rel="noopener noreferrer">
-              <Card className="group hover:shadow-2xl hover:scale-105 transition-all duration-300 border-orange-100 hover:border-orange-300 cursor-pointer overflow-hidden">
-              <div className="aspect-square bg-gradient-to-br from-gray-900 via-black to-gray-900 flex items-center justify-center relative overflow-hidden border-2 border-green-500">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.2),transparent_70%)]"></div>
-                <div className="relative z-10 text-3xl md:text-4xl transform group-hover:scale-110 transition-transform">🐍</div>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <div className="w-4 h-4 bg-green-500 rounded-sm transform rotate-45"></div>
-                  <div className="absolute top-4 left-0 w-3 h-3 bg-red-500 rounded-full"></div>
-                  <div className="absolute top-8 left-0 w-3 h-3 bg-red-500 rounded-full"></div>
-                  <div className="absolute top-12 left-0 w-3 h-3 bg-red-500 rounded-full"></div>
-                </div>
-              </div>
-              <CardContent className="p-4">
-                <h3 className="font-bold text-sm md:text-base text-gray-800 group-hover:text-orange-600 transition-colors flex items-center">
-                  <span className="text-orange-600 mr-1">→</span> Snake
-                </h3>
-              </CardContent>
-              </Card>
-            </Link>
-
-            {/* Game Tile 30 - Collect & Run Challenge */}
+            {/* Game Tile 28 - Collect & Run Challenge */}
             <Link href={getGameUrl('Collect & Run Challenge')} target="_blank" rel="noopener noreferrer">
               <Card className="group hover:shadow-2xl hover:scale-105 transition-all duration-300 border-orange-100 hover:border-orange-300 cursor-pointer overflow-hidden">
               <div className="aspect-square bg-gradient-to-br from-gray-900 via-black to-gray-900 flex items-center justify-center relative overflow-hidden border-2 border-orange-500">
@@ -1178,8 +1176,9 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-center items-center">
             <div>
               <div className="flex justify-center items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-linear-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
-                  <Sparkles className="w-5 h-5 text-white" />
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center">
+                  {/* <Sparkles className="w-5 h-5 text-white" /> */}
+                  <img src="/applaa.png" alt="Applaa Logo" width={32} height={32} />
                 </div>
                 <span className="text-xl font-bold">Applaa</span>
               </div>

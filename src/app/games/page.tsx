@@ -213,9 +213,7 @@ export default function GamesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
-                <Image src="/logo.svg" alt="Applaa Logo" width={24} height={24} />
-              </div>
+              <Image src="/applaa.png" alt="Applaa Logo" width={32} height={32} />
               <span className="text-xl font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
                 Applaa
               </span>
