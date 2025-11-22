@@ -1,0 +1,400 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Users (both kids and parents)
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  password     String
+  username     String?  @unique
+  firstName    String?
+  lastName     String?
+  avatar       String?  // Emoji avatar for kids
+  age          Int?     // Age for kid users
+  userType     UserType @default(KID) // KID or PARENT
+  isActive     Boolean  @default(true)
+  isVerified   Boolean  @default(false) // Email verification for parents
+  parentId     String?  // Link to parent account for kids
+  
+  // Profile info
+  bio          String?
+  interests    String? // JSON string array of interests
+  level        Int      @default(1)
+  xp           Int      @default(0)
+  
+  // Stats
+  friendsCount Int      @default(0)
+  gamesCount   Int      @default(0)
+  
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  // Relations
+  children     User[]   @relation("ParentChild")
+  parent       User?    @relation("ParentChild", fields: [parentId], references: [id])
+  createdGames Game[]
+  gameSessions GameSession[]
+  courseEnrollments CourseEnrollment[]
+  achievements  UserAchievement[]
+  friends       Friendship[] @relation("User1")
+  friendsOf     Friendship[] @relation("User2")
+  activityLogs  ActivityLog[]
+  
+  @@map("users")
+}
+
+// Games created by users
+model Game {
+  id          String     @id @default(cuid())
+  title       String
+  description String
+  category    GameCategory
+  tags        String?   // JSON string array of game tags
+  thumbnail   String     // Emoji or image URL
+  gameData    String?    // Game data/JSON
+  isPublic    Boolean    @default(true)
+  isFeatured  Boolean    @default(false)
+  
+  // Ratings and stats
+  rating      Float      @default(0)
+  playsCount  Int        @default(0)
+  likesCount  Int        @default(0)
+  
+  // Age and difficulty
+  ageRating   String     @default("6+") // 6+, 8+, 10+, 12+, 16+
+  difficulty  Difficulty @default(EASY) // EASY, MEDIUM, HARD
+  
+  // Creator info
+  creatorId   String
+  creator     User       @relation(fields: [creatorId], references: [id])
+  
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  
+  // Relations
+  gameSessions GameSession[]
+  ratings      GameRating[]
+  likes        GameLike[]
+  
+  @@map("games")
+}
+
+// Game sessions for tracking plays
+model GameSession {
+  id        String   @id @default(cuid())
+  gameId    String
+  userId    String
+  score     Int?
+  duration  Int?     // Session duration in seconds
+  completed Boolean  @default(false)
+  
+  game      Game     @relation(fields: [gameId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  @@map("game_sessions")
+}
+
+// Game ratings
+model GameRating {
+  id      String @id @default(cuid())
+  gameId  String
+  userId  String
+  rating  Int    // 1-5 stars
+  
+  game    Game   @relation(fields: [gameId], references: [id])
+  
+  createdAt DateTime @default(now())
+  
+  @@unique([gameId, userId])
+  @@map("game_ratings")
+}
+
+// Game likes
+model GameLike {
+  id     String @id @default(cuid())
+  gameId String
+  userId String
+  
+  game   Game   @relation(fields: [gameId], references: [id])
+  
+  createdAt DateTime @default(now())
+  
+  @@unique([gameId, userId])
+  @@map("game_likes")
+}
+
+// AI Courses
+model Course {
+  id          String      @id @default(cuid())
+  title       String
+  description String
+  category    CourseCategory
+  level       CourseLevel @default(BEGINNER)
+  duration    Int         // Duration in minutes
+  thumbnail   String      // Emoji or image URL
+  
+  // Instructor info
+  instructor  String
+  instructorAvatar String?
+  
+  // Age appropriateness
+  ageRange    String      @default("6-10") // e.g., "6-10", "8-12", "10-14", "12-18"
+  
+  // Course content
+  lessons     Lesson[]
+  
+  // Stats
+  enrolledCount Int       @default(0)
+  averageRating Float     @default(0)
+  
+  isPublished Boolean    @default(false)
+  isFeatured  Boolean    @default(false)
+  
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  
+  // Relations
+  enrollments CourseEnrollment[]
+  achievements Achievement[]
+  
+  @@map("courses")
+}
+
+// Individual lessons within courses
+model Lesson {
+  id          String @id @default(cuid())
+  courseId    String
+  title       String
+  description String
+  content     String // Lesson content (could be JSON with different content types)
+  order       Int    // Order within the course
+  duration    Int    // Duration in minutes
+  type        LessonType @default(VIDEO) // VIDEO, TEXT, INTERACTIVE, QUIZ
+  
+  course      Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  
+  // Progress tracking
+  enrollments CourseEnrollmentLesson[]
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@map("lessons")
+}
+
+// Course enrollments
+model CourseEnrollment {
+  id         String   @id @default(cuid())
+  courseId   String
+  userId     String
+  progress   Float    @default(0) // Progress percentage (0-100)
+  completed  Boolean  @default(false)
+  completedAt DateTime?
+  
+  course     Course   @relation(fields: [courseId], references: [id])
+  user       User     @relation(fields: [userId], references: [id])
+  
+  // Lesson progress
+  lessons    CourseEnrollmentLesson[]
+  
+  enrolledAt DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  
+  @@unique([courseId, userId])
+  @@map("course_enrollments")
+}
+
+// Individual lesson progress within enrollments
+model CourseEnrollmentLesson {
+  id              String @id @default(cuid())
+  enrollmentId    String
+  lessonId        String
+  completed       Boolean @default(false)
+  completedAt     DateTime?
+  timeSpent       Int?    // Time spent on lesson in seconds
+  
+  enrollment      CourseEnrollment @relation(fields: [enrollmentId], references: [id], onDelete: Cascade)
+  lesson          Lesson @relation(fields: [lessonId], references: [id])
+  
+  completedAtUnix Int?
+  
+  @@unique([enrollmentId, lessonId])
+  @@map("course_enrollment_lessons")
+}
+
+// Achievements
+model Achievement {
+  id          String           @id @default(cuid())
+  title       String
+  description String
+  icon        String           // Emoji icon
+  category    AchievementCategory
+  points      Int              @default(0)
+  
+  // Achievement criteria
+  type        AchievementType
+  criteria    String?          // JSON string for achievement criteria
+  
+  // Course association (if applicable)
+  courseId    String?
+  course      Course?          @relation(fields: [courseId], references: [id])
+  
+  isHidden    Boolean          @default(false) // Hidden achievements that are revealed when earned
+  
+  createdAt   DateTime         @default(now())
+  
+  // Relations
+  userAchievements UserAchievement[]
+  
+  @@map("achievements")
+}
+
+// User achievements
+model UserAchievement {
+  id            String      @id @default(cuid())
+  userId        String
+  achievementId String
+  progress      Float       @default(0) // Progress percentage (0-100)
+  completed     Boolean     @default(false)
+  completedAt   DateTime?
+  
+  user          User        @relation(fields: [userId], references: [id])
+  achievement   Achievement @relation(fields: [achievementId], references: [id])
+  
+  earnedAt      DateTime    @default(now())
+  
+  @@unique([userId, achievementId])
+  @@map("user_achievements")
+}
+
+// Friendships
+model Friendship {
+  id        String           @id @default(cuid())
+  user1Id   String
+  user2Id   String
+  status    FriendshipStatus @default(PENDING)
+  
+  user1     User             @relation("User1", fields: [user1Id], references: [id])
+  user2     User             @relation("User2", fields: [user2Id], references: [id])
+  
+  createdAt DateTime         @default(now())
+  updatedAt DateTime         @updatedAt
+  
+  @@unique([user1Id, user2Id])
+  @@map("friendships")
+}
+
+// Activity logs
+model ActivityLog {
+  id        String       @id @default(cuid())
+  userId    String
+  type      ActivityType
+  action    String       // Specific action performed
+  data      String?      // JSON data related to the activity
+  
+  user      User         @relation(fields: [userId], references: [id])
+  
+  createdAt DateTime     @default(now())
+  
+  @@map("activity_logs")
+}
+
+// Enums
+enum UserType {
+  KID
+  PARENT
+}
+
+enum GameCategory {
+  ADVENTURE
+  ACTION
+  PUZZLE
+  EDUCATIONAL
+  CREATIVE
+  SPORTS
+  SIMULATION
+  STRATEGY
+}
+
+enum Difficulty {
+  EASY
+  MEDIUM
+  HARD
+}
+
+enum CourseCategory {
+  AI_BASICS
+  GAME_DEVELOPMENT
+  ADVANCED_AI
+  CREATIVE
+  ROBOTICS
+  WEB_DEVELOPMENT
+  MOBILE_DEVELOPMENT
+  DATA_SCIENCE
+}
+
+enum CourseLevel {
+  BEGINNER
+  INTERMEDIATE
+  ADVANCED
+}
+
+enum LessonType {
+  VIDEO
+  TEXT
+  INTERACTIVE
+  QUIZ
+  PROJECT
+}
+
+enum AchievementCategory {
+  COURSE_COMPLETION
+  GAME_CREATION
+  SOCIAL
+  LEARNING
+  CREATIVITY
+  STREAK
+}
+
+enum AchievementType {
+  COURSE_COMPLETE
+  LESSONS_COMPLETE
+  GAMES_CREATED
+  FRIENDS_MADE
+  XP_EARNED
+  LOGIN_STREAK
+  PERFECT_SCORE
+}
+
+enum FriendshipStatus {
+  PENDING
+  ACCEPTED
+  BLOCKED
+}
+
+enum ActivityType {
+  LOGIN
+  COURSE_ENROLL
+  LESSON_COMPLETE
+  COURSE_COMPLETE
+  GAME_CREATE
+  GAME_PLAY
+  ACHIEVEMENT_EARN
+  FRIEND_ADD
+  XP_EARN
+}
