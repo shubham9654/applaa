@@ -1,8 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
@@ -21,8 +21,16 @@ import {
 
 export default function LoginPage() {
   const router = useRouter()
-  const searchParams = useSearchParams()
-  const message = searchParams.get('message')
+  const [message, setMessage] = useState<string | null>(null)
+
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams(window.location.search)
+      setMessage(params.get('message'))
+    } catch (e) {
+      setMessage(null)
+    }
+  }, [])
   
   const [showPassword, setShowPassword] = useState(false)
   const [isKidLogin, setIsKidLogin] = useState(true)

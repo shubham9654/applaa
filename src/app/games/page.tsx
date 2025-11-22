@@ -29,7 +29,6 @@ import {
   Puzzle,
   BookOpen,
   Palette,
-  Football,
   Music,
   Shield
 } from 'lucide-react'
@@ -47,7 +46,7 @@ export default function GamesPage() {
     { id: 'puzzle', name: 'Puzzle', icon: Puzzle, color: 'purple' },
     { id: 'educational', name: 'Educational', icon: BookOpen, color: 'green' },
     { id: 'creative', name: 'Creative', icon: Palette, color: 'pink' },
-    { id: 'sports', name: 'Sports', icon: Football, color: 'yellow' }
+    { id: 'sports', name: 'Sports', icon: Shield, color: 'yellow' }
   ]
 
   // Mock games data

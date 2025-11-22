@@ -320,9 +320,16 @@ export default function ProfilePage() {
                       <div className="space-y-2">
                         <div className="flex justify-between text-xs text-gray-600">
                           <span>Progress</span>
-                          <span>{achievement.progress}/{achievement.total}</span>
+                          <span>{achievement.progress ?? 0}/{achievement.total ?? 0}</span>
                         </div>
-                        <Progress value={(achievement.progress! / achievement.total) * 100} className="h-2" />
+                        {
+                          (() => {
+                            const total = achievement.total ?? 0
+                            const progress = achievement.progress ?? 0
+                            const percent = total > 0 ? (progress / total) * 100 : 0
+                            return <Progress value={percent} className="h-2" />
+                          })()
+                        }
                       </div>
                     )}
                   </CardContent>

@@ -23,7 +23,7 @@ import {
   Zap,
   Brain,
   Palette,
-  Robot,
+  Bot,
   Music,
   Globe,
   Code,
@@ -40,7 +40,7 @@ export default function AcademyPage() {
     { id: 'all', name: 'All Courses', icon: BookOpen, color: 'orange' },
     { id: 'ai-basics', name: 'AI Basics', icon: Brain, color: 'pink' },
     { id: 'game-dev', name: 'Game Development', icon: Code, color: 'purple' },
-    { id: 'advanced-ai', name: 'Advanced AI', icon: Robot, color: 'blue' },
+    { id: 'advanced-ai', name: 'Advanced AI', icon: Bot, color: 'blue' },
     { id: 'creative', name: 'Creative', icon: Palette, color: 'green' },
     { id: 'robotics', name: 'Robotics', icon: Zap, color: 'red' }
   ]
