@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Input } from '@/components/ui/input'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import Image from 'next/image'
 import { 
   Sparkles, 
   Search,
@@ -43,9 +44,9 @@ export default function GamesPage() {
     { id: 'all', name: 'All Games', icon: Gamepad2, color: 'orange' },
     { id: 'adventure', name: 'Adventure', icon: Rocket, color: 'blue' },
     { id: 'action', name: 'Action', icon: Sword, color: 'red' },
-    { id: 'puzzle', name: 'Puzzle', icon: Puzzle, color: 'purple' },
+    { id: 'puzzle', name: 'Puzzle', icon: Puzzle, color: 'orange' },
     { id: 'educational', name: 'Educational', icon: BookOpen, color: 'green' },
-    { id: 'creative', name: 'Creative', icon: Palette, color: 'pink' },
+    { id: 'creative', name: 'Creative', icon: Palette, color: 'orange' },
     { id: 'sports', name: 'Sports', icon: Shield, color: 'yellow' }
   ]
 
@@ -206,27 +207,28 @@ export default function GamesPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-pink-50 to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-orange-100">
       {/* Header */}
       <div className="bg-white/80 backdrop-blur-sm border-b border-orange-100 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-pink-500 rounded-lg flex items-center justify-center">
-                <Sparkles className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
+              <Image src="/applaa.png" alt="Applaa Logo" width={32} height={32} />
+              <span className="text-xl font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
                 Applaa
               </span>
             </Link>
             <div className="flex items-center space-x-4">
+              <Link href="/about" className="text-gray-600 hover:text-orange-600 transition-colors hidden md:block">
+                About Us
+              </Link>
               <Link href="/academy">
                 <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50">
                   AI Academy
                 </Button>
               </Link>
               <Link href="/profile">
-                <Button variant="outline" className="border-purple-200 text-purple-600 hover:bg-purple-50">
+                <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50">
                   My Profile
                 </Button>
               </Link>
@@ -239,7 +241,7 @@ export default function GamesPage() {
         {/* Page Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-orange-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
               Game Hub
             </span>
           </h1>
@@ -256,11 +258,11 @@ export default function GamesPage() {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {games.filter(game => game.featured).map((game) => (
-              <Card key={game.id} className="border-gradient-to-r from-orange-100 to-pink-100 hover:shadow-xl transition-all duration-300">
+              <Card key={game.id} className="border-orange-100 hover:shadow-xl transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between mb-4">
                     <div className="text-4xl">{game.thumbnail}</div>
-                    <Badge className="bg-gradient-to-r from-orange-500 to-pink-500 text-white">
+                    <Badge className="bg-gradient-to-r from-orange-500 to-orange-600 text-white">
                       <Crown className="w-3 h-3 mr-1" />
                       Featured
                     </Badge>
@@ -271,7 +273,7 @@ export default function GamesPage() {
                   
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center space-x-2">
-                      <div className="w-6 h-6 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center text-xs">
+                      <div className="w-6 h-6 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full flex items-center justify-center text-xs">
                         {game.creatorAvatar}
                       </div>
                       <span className="text-sm text-gray-600">{game.creator}</span>
@@ -283,7 +285,7 @@ export default function GamesPage() {
                   </div>
 
                   <div className="flex space-x-2">
-                    <Button className="flex-1 bg-gradient-to-r from-orange-500 to-pink-500">
+                    <Button className="flex-1 bg-gradient-to-r from-orange-500 to-orange-600">
                       <Play className="w-4 h-4 mr-2" />
                       Play Now
                     </Button>
@@ -319,7 +321,7 @@ export default function GamesPage() {
                   onClick={() => setSelectedCategory(category.id)}
                   className={`whitespace-nowrap ${
                     selectedCategory === category.id
-                      ? 'bg-gradient-to-r from-orange-500 to-pink-500'
+                      ? 'bg-gradient-to-r from-orange-500 to-orange-600'
                       : 'border-orange-200 text-orange-600 hover:bg-orange-50'
                   }`}
                 >
@@ -399,7 +401,7 @@ export default function GamesPage() {
                       {/* Creator Info */}
                       <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-2">
-                          <div className="w-6 h-6 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center text-xs">
+                          <div className="w-6 h-6 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full flex items-center justify-center text-xs">
                             {game.creatorAvatar}
                           </div>
                           <span className="text-sm text-gray-600">{game.creator}</span>
@@ -428,7 +430,7 @@ export default function GamesPage() {
 
                       {/* Action Buttons */}
                       <div className="flex space-x-2">
-                        <Button className="flex-1 bg-gradient-to-r from-orange-500 to-pink-500">
+                        <Button className="flex-1 bg-gradient-to-r from-orange-500 to-orange-600">
                           <Play className="w-4 h-4 mr-2" />
                           Play
                         </Button>
@@ -455,17 +457,17 @@ export default function GamesPage() {
           {/* Sidebar */}
           <div className="space-y-6">
             {/* Top Creators */}
-            <Card className="border-purple-100">
+            <Card className="border-orange-100">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center">
-                  <Trophy className="w-5 h-5 mr-2 text-purple-600" />
+                  <Trophy className="w-5 h-5 mr-2 text-orange-600" />
                   Top Creators
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 {topCreators.map((creator) => (
                   <div key={creator.id} className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center text-lg">
+                    <div className="w-10 h-10 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full flex items-center justify-center text-lg">
                       {creator.avatar}
                     </div>
                     <div className="flex-1">
@@ -499,14 +501,14 @@ export default function GamesPage() {
             </Card>
 
             {/* Create Game CTA */}
-            <Card className="border-gradient-to-r from-pink-100 to-purple-100">
+            <Card className="border-orange-100">
               <CardContent className="p-6 text-center">
                 <div className="text-3xl mb-3">🎨</div>
                 <h3 className="font-bold mb-2">Create Your Own Game!</h3>
                 <p className="text-sm text-gray-600 mb-4">
                   Share your creativity with the Applaa community
                 </p>
-                <Button className="w-full bg-gradient-to-r from-pink-500 to-purple-500">
+                <Button className="w-full bg-gradient-to-r from-orange-500 to-orange-600">
                   <Gamepad2 className="w-4 h-4 mr-2" />
                   Start Creating
                 </Button>
