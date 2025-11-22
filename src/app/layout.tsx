@@ -14,24 +14,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Z.ai Code Scaffold - AI-Powered Development",
-  description: "Modern Next.js scaffold optimized for AI-powered development with Z.ai. Built with TypeScript, Tailwind CSS, and shadcn/ui.",
-  keywords: ["Z.ai", "Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "AI development", "React"],
-  authors: [{ name: "Z.ai Team" }],
+  title: "applaa — The ultimate kid-safe social network",
+  description: "The ultimate kid-safe social network: Learn AI, build games, and express creativity in a parent-approved space.",
+  keywords: ["applaa", "kids", "AI", "games", "education", "social", "parent-approved"],
+  authors: [{ name: "applaa Team" }],
   icons: {
-    icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    icon: "/favicon.ico",
   },
   openGraph: {
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
-    url: "https://chat.z.ai",
-    siteName: "Z.ai",
+    title: "applaa — Learn AI & Build Games",
+    description: "The ultimate kid-safe social network: Learn AI, build games, and express creativity in a parent-approved space.",
+    url: "https://applaa.local",
+    siteName: "applaa",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
+    title: "applaa — Learn AI & Build Games",
+    description: "The ultimate kid-safe social network: Learn AI, build games, and express creativity in a parent-approved space.",
   },
 };
 
