@@ -34,6 +34,59 @@ import {
   Shield
 } from 'lucide-react'
 
+// Helper function to generate game URLs
+const getGameUrl = (gameName: string): string => {
+  const urlMap: Record<string, string> = {
+    'Typing Invaders': 'typinginvaders',
+    'Rock Paper Scissor': 'rockpaperscissor',
+    'Ping Pong': 'pingpong',
+    'Skateboard Extreme': 'skateboardextreme',
+    'Memory Match': 'memorymatch',
+    'Words Finding': 'words-finding',
+    'Infinite Runner': 'infiniterunner',
+    'Year 9 Maths Tracker': 'year9maths',
+    'Solitaire Collection': 'solitairecollection',
+    'Spot The Difference': 'spotthedifference',
+    'Your Todos List': 'yourtodos',
+    'Arcane Breaker': 'https://breakout-arkanoid.vercel.app/',
+    'Crossword Puzzle Game': 'crosswordpuzzlegame',
+    'Dots And Boxes': 'dotsandboxes',
+    'Whack A Mole': 'whackamole',
+    'Connect Four': 'connectfour',
+    'Countdown Quiz': 'countdownquiz',
+    'Adventure Map': 'adventure-map',
+    'Emoji Match': 'emoji-match',
+    'Escape the Maze': 'scape-the-maze',
+    'Stick Sword Duel': 'sticksword-uel',
+    'Element Family Builder': 'elementfamilybuilder',
+    'Tap Zero': 'tapzero',
+    'Bubble Pop': 'bubblepop',
+    'Maze of Terror': 'mazeofterror',
+    'Abstract Speedster': 'abstract_speedster',
+    'Mono-Fleet': 'mono-fleet',
+    'Snake': 'snake',
+    'Collect & Run Challenge': 'collectrunchallenge',
+    'Cyber Runner': 'cyber-runner',
+    'Moon Colony Tycoon': 'moon-colony-tycoon',
+    'Desert Caravan Trader': 'desert-caravan-trader',
+    'Tic-Tac-Toe': 'tik-tok-toe',
+    'Jumpy Dot': 'jumpy-dot',
+    'Truth or Dare Spinner': 'truth-or-dare-spinner',
+    'Net Worth Calculator': 'net-worth-calculator',
+  }
+  
+  // Check if it's an external URL (starts with http)
+  if (urlMap[gameName]?.startsWith('http')) {
+    return urlMap[gameName]
+  }
+  
+  const slug = urlMap[gameName] || gameName.toLowerCase().replace(/\s+/g, '').replace(/[^a-z0-9]/g, '')
+  return `https://applaa.com/${slug}/`
+}
+
+// Helper function to generate random number under 1000
+const randomUnder1000 = () => Math.floor(Math.random() * 1000)
+
 export default function GamesPage() {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
@@ -42,125 +95,63 @@ export default function GamesPage() {
   // Game categories
   const categories = [
     { id: 'all', name: 'All Games', icon: Gamepad2, color: 'orange' },
-    { id: 'adventure', name: 'Adventure', icon: Rocket, color: 'blue' },
-    { id: 'action', name: 'Action', icon: Sword, color: 'red' },
-    { id: 'puzzle', name: 'Puzzle', icon: Puzzle, color: 'orange' },
-    { id: 'educational', name: 'Educational', icon: BookOpen, color: 'green' },
-    { id: 'creative', name: 'Creative', icon: Palette, color: 'orange' },
-    { id: 'sports', name: 'Sports', icon: Shield, color: 'yellow' }
+    { id: 'puzzle', name: 'Puzzle & Logic', icon: Puzzle, color: 'blue', emoji: '🎯' },
+    { id: 'arcade', name: 'Arcade & Classic', icon: Gamepad2, color: 'green', emoji: '🎮' },
+    { id: 'speed', name: 'Speed & Action', icon: Zap, color: 'red', emoji: '⚡' },
+    { id: 'learning', name: 'Learning & Academy', icon: BookOpen, color: 'purple', emoji: '📚' },
+    { id: 'adventure', name: 'Adventure & Creative', icon: Rocket, color: 'indigo', emoji: '🌍' },
+    { id: 'fun', name: 'Fun & Party', icon: Music, color: 'yellow', emoji: '🧩' },
   ]
 
-  // Mock games data
-  const games = [
-    {
-      id: 1,
-      title: 'Space Adventure',
-      description: 'Explore the galaxy and discover new planets in this exciting space adventure!',
-      category: 'adventure',
-      creator: 'CoolKid123',
-      creatorAvatar: '🦄',
-      plays: 15234,
-      likes: 892,
-      rating: 4.8,
-      ageRating: '6+',
-      difficulty: 'Easy',
-      tags: ['Space', 'Exploration', 'Adventure'],
-      thumbnail: '🚀',
-      featured: true,
-      newGame: false,
-      lastUpdated: '2 days ago'
-    },
-    {
-      id: 2,
-      title: 'AI Robot Battle',
-      description: 'Command your AI robot team in epic tactical battles!',
-      category: 'action',
-      creator: 'TechMaster',
-      creatorAvatar: '🤖',
-      plays: 12456,
-      likes: 734,
-      rating: 4.6,
-      ageRating: '10+',
-      difficulty: 'Medium',
-      tags: ['Robots', 'Battle', 'Strategy'],
-      thumbnail: '⚔️',
-      featured: true,
-      newGame: false,
-      lastUpdated: '1 week ago'
-    },
-    {
-      id: 3,
-      title: 'Magic Puzzle Quest',
-      description: 'Solve enchanted puzzles and collect magical gems!',
-      category: 'puzzle',
-      creator: 'PuzzleQueen',
-      creatorAvatar: '👑',
-      plays: 8934,
-      likes: 567,
-      rating: 4.9,
-      ageRating: '8+',
-      difficulty: 'Medium',
-      tags: ['Puzzle', 'Magic', 'Fantasy'],
-      thumbnail: '🧩',
-      featured: false,
-      newGame: true,
-      lastUpdated: 'Just now'
-    },
-    {
-      id: 4,
-      title: 'Math Wizard Academy',
-      description: 'Learn math while casting spells and defeating monsters!',
-      category: 'educational',
-      creator: 'EduGamer',
-      creatorAvatar: '🎓',
-      plays: 6789,
-      likes: 445,
-      rating: 4.7,
-      ageRating: '6+',
-      difficulty: 'Easy',
-      tags: ['Math', 'Learning', 'Magic'],
-      thumbnail: '🧙‍♂️',
-      featured: false,
-      newGame: false,
-      lastUpdated: '3 days ago'
-    },
-    {
-      id: 5,
-      title: 'Art Studio Creator',
-      description: 'Create amazing digital art and share with friends!',
-      category: 'creative',
-      creator: 'ArtistGurl',
-      creatorAvatar: '🎨',
-      plays: 5432,
-      likes: 678,
-      rating: 4.8,
-      ageRating: 'All',
-      difficulty: 'Easy',
-      tags: ['Art', 'Creative', 'Drawing'],
-      thumbnail: '🎨',
-      featured: false,
-      newGame: true,
-      lastUpdated: '1 day ago'
-    },
-    {
-      id: 6,
-      title: 'Soccer Champions',
-      description: 'Lead your team to victory in this exciting soccer game!',
-      category: 'sports',
-      creator: 'SportsFan',
-      creatorAvatar: '⚽',
-      plays: 9876,
-      likes: 534,
-      rating: 4.5,
-      ageRating: '8+',
-      difficulty: 'Medium',
-      tags: ['Soccer', 'Sports', 'Team'],
-      thumbnail: '⚽',
-      featured: true,
-      newGame: false,
-      lastUpdated: '4 days ago'
-    }
-  ]
+  // Real games data organized by categories - using useState to generate random values on mount
+  const [games] = useState(() => {
+    const allGames = [
+      // Featured Games
+      { id: 1, title: 'Memory Match', category: 'puzzle', featured: true, views: randomUnder1000(), loves: randomUnder1000(), emoji: '🧩' },
+      { id: 2, title: 'Words Finding', category: 'puzzle', featured: true, views: randomUnder1000(), loves: randomUnder1000(), emoji: '🔤' },
+      { id: 3, title: 'Abstract Speedster', category: 'speed', featured: true, views: randomUnder1000(), loves: randomUnder1000(), emoji: '🏎️' },
+      // Puzzle & Logic Games
+      { id: 4, title: 'Crossword Puzzle Game', category: 'puzzle', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '📰' },
+      { id: 5, title: 'Spot The Difference', category: 'puzzle', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '🔍' },
+      { id: 6, title: 'Connect Four', category: 'puzzle', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '🔴' },
+      { id: 7, title: 'Dots And Boxes', category: 'puzzle', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '⚫' },
+      { id: 8, title: 'Escape the Maze', category: 'puzzle', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '🏛️' },
+      { id: 9, title: 'Maze of Terror', category: 'puzzle', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '🔷' },
+      { id: 10, title: 'Tap Zero', category: 'puzzle', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '0' },
+      { id: 11, title: 'Emoji Match', category: 'puzzle', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '😊' },
+      // Arcade & Classic Games
+      { id: 12, title: 'Typing Invaders', category: 'arcade', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '👾' },
+      { id: 13, title: 'Ping Pong', category: 'arcade', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '🏓' },
+      { id: 14, title: 'Whack A Mole', category: 'arcade', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '🕳️' },
+      { id: 15, title: 'Snake', category: 'arcade', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '🐍' },
+      { id: 16, title: 'Bubble Pop', category: 'arcade', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '🫧' },
+      { id: 17, title: 'Arcane Breaker', category: 'arcade', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '⚡' },
+      { id: 18, title: 'Solitaire Collection', category: 'arcade', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '🃏' },
+      { id: 19, title: 'Mono-Fleet', category: 'arcade', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '🔷' },
+      // Speed & Action Games
+      { id: 20, title: 'Infinite Runner', category: 'speed', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '🏃' },
+      { id: 21, title: 'Skateboard Extreme', category: 'speed', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '🛹' },
+      { id: 22, title: 'Cyber Runner', category: 'speed', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '🤖' },
+      { id: 23, title: 'Jumpy Dot', category: 'speed', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '🔴' },
+      { id: 24, title: 'Collect & Run Challenge', category: 'speed', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '🏃' },
+      { id: 25, title: 'Stick Sword Duel', category: 'speed', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '⚔️' },
+      // Learning & Academy
+      { id: 26, title: 'Year 9 Maths Tracker', category: 'learning', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '📚' },
+      { id: 27, title: 'Countdown Quiz', category: 'learning', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '5' },
+      { id: 28, title: 'Element Family Builder', category: 'learning', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '⚛️' },
+      { id: 29, title: 'Your Todos List', category: 'learning', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '📝' },
+      { id: 30, title: 'Net Worth Calculator', category: 'learning', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '💰' },
+      // Adventure & Creative
+      { id: 31, title: 'Adventure Map', category: 'adventure', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '🗺️' },
+      { id: 32, title: 'Moon Colony Tycoon', category: 'adventure', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '🌙' },
+      { id: 33, title: 'Desert Caravan Trader', category: 'adventure', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '🐪' },
+      // Fun & Party Games
+      { id: 34, title: 'Rock Paper Scissor', category: 'fun', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '✂️' },
+      { id: 35, title: 'Tic-Tac-Toe', category: 'fun', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '❌' },
+      { id: 36, title: 'Truth or Dare Spinner', category: 'fun', featured: false, views: randomUnder1000(), loves: randomUnder1000(), emoji: '🎯' },
+    ]
+    return allGames
+  })
 
   // Top creators
   const topCreators = [
@@ -173,22 +164,18 @@ export default function GamesPage() {
   // Filter and sort games
   const filteredGames = games
     .filter(game => {
-      const matchesSearch = game.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           game.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           game.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+      const matchesSearch = game.title.toLowerCase().includes(searchTerm.toLowerCase())
       const matchesCategory = selectedCategory === 'all' || game.category === selectedCategory
       return matchesSearch && matchesCategory
     })
     .sort((a, b) => {
       switch (sortBy) {
         case 'popular':
-          return b.plays - a.plays
-        case 'rating':
-          return b.rating - a.rating
+          return b.views - a.views
         case 'newest':
           return b.id - a.id
         case 'likes':
-          return b.likes - a.likes
+          return b.loves - a.loves
         default:
           return 0
       }
@@ -214,7 +201,7 @@ export default function GamesPage() {
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-2">
               <Image src="/applaa.png" alt="Applaa Logo" width={32} height={32} />
-              <span className="text-xl font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
+              <span className="text-3xl font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
                 Applaa
               </span>
             </Link>
@@ -261,37 +248,40 @@ export default function GamesPage() {
               <Card key={game.id} className="border-orange-100 hover:shadow-xl transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between mb-4">
-                    <div className="text-4xl">{game.thumbnail}</div>
+                    <div className="text-4xl">{game.emoji}</div>
                     <Badge className="bg-gradient-to-r from-orange-500 to-orange-600 text-white">
                       <Crown className="w-3 h-3 mr-1" />
                       Featured
                     </Badge>
                   </div>
                   
-                  <h3 className="font-bold text-lg mb-2">{game.title}</h3>
-                  <p className="text-gray-600 text-sm mb-4">{game.description}</p>
+                  <h3 className="font-bold text-lg mb-4">{game.title}</h3>
                   
                   <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-6 h-6 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full flex items-center justify-center text-xs">
-                        {game.creatorAvatar}
+                    <div className="flex items-center space-x-4 text-sm text-gray-600">
+                      <div className="flex items-center">
+                        <Eye className="w-4 h-4 mr-1" />
+                        {game.views}
                       </div>
-                      <span className="text-sm text-gray-600">{game.creator}</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Star className="w-4 h-4 text-yellow-500 mr-1" />
-                      <span className="text-sm font-medium">{game.rating}</span>
+                      <div className="flex items-center">
+                        <Heart className="w-4 h-4 mr-1 text-red-400" />
+                        {game.loves}
+                      </div>
                     </div>
                   </div>
 
                   <div className="flex space-x-2">
-                    <Button className="flex-1 bg-gradient-to-r from-orange-500 to-orange-600">
-                      <Play className="w-4 h-4 mr-2" />
-                      Play Now
-                    </Button>
-                    <Button variant="outline" size="sm">
-                      <Heart className="w-4 h-4" />
-                    </Button>
+                    <Link href={getGameUrl(game.title)} target="_blank" rel="noopener noreferrer" className="flex-1">
+                      <Button className="w-full bg-gradient-to-r from-orange-500 to-orange-600">
+                        <Play className="w-4 h-4 mr-2" />
+                        Play Now
+                      </Button>
+                    </Link>
+                    <Link href="/auth/login">
+                      <Button variant="outline" size="sm">
+                        <Heart className="w-4 h-4" />
+                      </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
@@ -301,17 +291,17 @@ export default function GamesPage() {
 
         {/* Search and Filter */}
         <div className="flex flex-col lg:flex-row gap-4 mb-8">
-          <div className="flex-1 relative">
+          <div className="relative max-w-xs">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
             <Input
               placeholder="Search games..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10 border-orange-200 focus:border-orange-400"
+              className="pl-10 border-orange-200 focus:border-orange-400 w-full"
             />
           </div>
           
-          <div className="flex gap-2 overflow-x-auto">
+          <div className="flex gap-2 overflow-x-auto flex-1">
             {categories.map((category) => {
               const Icon = category.icon
               return (
@@ -321,10 +311,11 @@ export default function GamesPage() {
                   onClick={() => setSelectedCategory(category.id)}
                   className={`whitespace-nowrap ${
                     selectedCategory === category.id
-                      ? 'bg-gradient-to-r from-orange-500 to-orange-600'
+                      ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white'
                       : 'border-orange-200 text-orange-600 hover:bg-orange-50'
                   }`}
                 >
+                  {category.emoji && <span className="mr-2">{category.emoji}</span>}
                   <Icon className="w-4 h-4 mr-2" />
                   {category.name}
                 </Button>
@@ -354,89 +345,62 @@ export default function GamesPage() {
                 const categoryColor = getCategoryColor(game.category)
                 
                 return (
-                  <Card key={game.id} className={`border-${categoryColor}-100 hover:shadow-lg transition-all duration-300`}>
+                  <Card key={game.id} className="border-orange-100 hover:shadow-lg transition-all duration-300">
                     <CardHeader className="pb-3">
                       <div className="flex items-start justify-between">
-                        <div className="text-3xl mb-2">{game.thumbnail}</div>
+                        <div className="text-3xl mb-2">{game.emoji}</div>
                         <div className="flex items-center space-x-2">
-                          {game.newGame && (
-                            <Badge className="bg-green-500 text-white">NEW</Badge>
+                          {game.featured && (
+                            <Badge className="bg-orange-500 text-white">
+                              <Crown className="w-3 h-3 mr-1" />
+                              Featured
+                            </Badge>
                           )}
-                          <Button variant="ghost" size="sm">
-                            <Heart className="w-4 h-4" />
-                          </Button>
+                          <Link href="/auth/login">
+                            <Button variant="ghost" size="sm">
+                              <Heart className="w-4 h-4" />
+                            </Button>
+                          </Link>
                         </div>
                       </div>
                       
                       <CardTitle className="text-lg">{game.title}</CardTitle>
-                      <CardDescription className="text-sm">
-                        {game.description}
-                      </CardDescription>
                     </CardHeader>
 
                     <CardContent className="space-y-4">
                       {/* Game Meta */}
                       <div className="flex flex-wrap gap-2">
-                        <Badge variant="outline" className={`border-${categoryColor}-200 text-${categoryColor}-600`}>
+                        <Badge variant="outline" className="border-orange-200 text-orange-600">
                           <CategoryIcon className="w-3 h-3 mr-1" />
                           {categories.find(cat => cat.id === game.category)?.name}
                         </Badge>
-                        <Badge variant="outline" className="border-gray-200 text-gray-600">
-                          {game.ageRating}
-                        </Badge>
-                        <Badge variant="outline" className="border-blue-200 text-blue-600">
-                          {game.difficulty}
-                        </Badge>
-                      </div>
-
-                      {/* Tags */}
-                      <div className="flex flex-wrap gap-1">
-                        {game.tags.map((tag) => (
-                          <Badge key={tag} variant="secondary" className="text-xs">
-                            {tag}
-                          </Badge>
-                        ))}
-                      </div>
-
-                      {/* Creator Info */}
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center space-x-2">
-                          <div className="w-6 h-6 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full flex items-center justify-center text-xs">
-                            {game.creatorAvatar}
-                          </div>
-                          <span className="text-sm text-gray-600">{game.creator}</span>
-                        </div>
-                        <Button variant="ghost" size="sm">
-                          <Users className="w-4 h-4 mr-1" />
-                          Follow
-                        </Button>
                       </div>
 
                       {/* Stats */}
-                      <div className="grid grid-cols-3 gap-4 text-sm">
+                      <div className="grid grid-cols-2 gap-4 text-sm">
                         <div className="flex items-center">
-                          <Play className="w-4 h-4 mr-1 text-gray-400" />
-                          {game.plays.toLocaleString()}
+                          <Eye className="w-4 h-4 mr-1 text-gray-400" />
+                          {game.views} views
                         </div>
                         <div className="flex items-center">
                           <Heart className="w-4 h-4 mr-1 text-red-400" />
-                          {game.likes}
-                        </div>
-                        <div className="flex items-center">
-                          <Star className="w-4 h-4 mr-1 text-yellow-500" />
-                          {game.rating}
+                          {game.loves} loves
                         </div>
                       </div>
 
                       {/* Action Buttons */}
                       <div className="flex space-x-2">
-                        <Button className="flex-1 bg-gradient-to-r from-orange-500 to-orange-600">
-                          <Play className="w-4 h-4 mr-2" />
-                          Play
-                        </Button>
-                        <Button variant="outline" size="sm">
-                          <MessageCircle className="w-4 h-4" />
-                        </Button>
+                        <Link href={getGameUrl(game.title)} target="_blank" rel="noopener noreferrer" className="flex-1">
+                          <Button className="w-full bg-gradient-to-r from-orange-500 to-orange-600">
+                            <Play className="w-4 h-4 mr-2" />
+                            Play
+                          </Button>
+                        </Link>
+                        <Link href="/auth/login">
+                          <Button variant="outline" size="sm">
+                            <MessageCircle className="w-4 h-4" />
+                          </Button>
+                        </Link>
                       </div>
                     </CardContent>
                   </Card>
@@ -474,9 +438,11 @@ export default function GamesPage() {
                       <p className="font-medium text-sm">{creator.username}</p>
                       <p className="text-xs text-gray-600">{creator.games} games • {creator.followers} followers</p>
                     </div>
-                    <Button variant="outline" size="sm">
-                      Follow
-                    </Button>
+                    <Link href="/auth/login">
+                      <Button variant="outline" size="sm">
+                        Follow
+                      </Button>
+                    </Link>
                   </div>
                 ))}
               </CardContent>

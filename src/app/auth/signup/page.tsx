@@ -140,7 +140,7 @@ export default function SignupPage() {
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-2">
               <Image src="/applaa.png" alt="Applaa Logo" width={32} height={32} />
-              <span className="text-xl font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
+              <span className="text-3xl font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
                 Applaa
               </span>
             </Link>
@@ -322,15 +322,6 @@ export default function SignupPage() {
                 <p className="text-sm text-red-600">{errors.confirmPassword}</p>
               )}
             </div>
-
-            {/* Terms and Privacy */}
-            <Alert className="border-blue-200 bg-blue-50">
-              <Shield className="w-4 h-4 text-blue-600" />
-              <AlertDescription className="text-blue-800 text-sm">
-                By signing up, you agree to our Terms of Service and Privacy Policy. 
-                We're COPPA-compliant and committed to protecting your privacy.
-              </AlertDescription>
-            </Alert>
 
             {/* Error Message */}
             {errors.general && (

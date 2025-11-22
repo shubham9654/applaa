@@ -7,8 +7,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Progress } from '@/components/ui/progress'
 import { Input } from '@/components/ui/input'
+import Image from 'next/image'
 import { 
-  Sparkles, 
   Search,
   BookOpen,
   GraduationCap,
@@ -188,10 +188,8 @@ export default function AcademyPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
-                <Sparkles className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
+              <Image src="/applaa.png" alt="Applaa Logo" width={32} height={32} />
+              <span className="text-3xl font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
                 Applaa
               </span>
             </Link>
@@ -386,31 +384,39 @@ export default function AcademyPage() {
                   {/* Action Buttons */}
                   <div className="flex space-x-2">
                     {course.status === 'available' && (
-                      <Button className="flex-1 bg-gradient-to-r from-orange-500 to-orange-600">
-                        <Play className="w-4 h-4 mr-2" />
-                        Start Learning
-                      </Button>
+                      <Link href="/auth/login" className="flex-1">
+                        <Button className="w-full bg-gradient-to-r from-orange-500 to-orange-600">
+                          <Play className="w-4 h-4 mr-2" />
+                          Start Learning
+                        </Button>
+                      </Link>
                     )}
                     
                     {course.status === 'enrolled' && (
-                      <Button className="flex-1 bg-gradient-to-r from-orange-500 to-orange-600">
-                        <Play className="w-4 h-4 mr-2" />
-                        Continue Learning
-                      </Button>
+                      <Link href="/auth/login" className="flex-1">
+                        <Button className="w-full bg-gradient-to-r from-orange-500 to-orange-600">
+                          <Play className="w-4 h-4 mr-2" />
+                          Continue Learning
+                        </Button>
+                      </Link>
                     )}
                     
                     {course.status === 'completed' && (
-                      <Button variant="outline" className="flex-1 border-green-200 text-green-600">
-                        <Target className="w-4 h-4 mr-2" />
-                        Review Certificate
-                      </Button>
+                      <Link href="/auth/login" className="flex-1">
+                        <Button variant="outline" className="w-full border-green-200 text-green-600">
+                          <Target className="w-4 h-4 mr-2" />
+                          Review Certificate
+                        </Button>
+                      </Link>
                     )}
                     
                     {course.status === 'locked' && (
-                      <Button variant="outline" className="flex-1 border-gray-200 text-gray-400" disabled>
-                        <Lock className="w-4 h-4 mr-2" />
-                        Unlock at Level 10
-                      </Button>
+                      <Link href="/auth/login" className="flex-1">
+                        <Button variant="outline" className="w-full border-gray-200 text-gray-400">
+                          <Lock className="w-4 h-4 mr-2" />
+                          Unlock at Level 10
+                        </Button>
+                      </Link>
                     )}
                   </div>
                 </CardContent>
@@ -437,14 +443,18 @@ export default function AcademyPage() {
               Join thousands of kids learning AI, creating games, and building the future together!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-to-r from-orange-500 to-orange-600">
-                <Rocket className="w-5 h-5 mr-2" />
-                Explore All Courses
-              </Button>
-              <Button size="lg" variant="outline" className="border-orange-200 text-orange-600">
-                <Zap className="w-5 h-5 mr-2" />
-                View Learning Path
-              </Button>
+              <Link href="/auth/login">
+                <Button size="lg" className="bg-gradient-to-r from-orange-500 to-orange-600">
+                  <Rocket className="w-5 h-5 mr-2" />
+                  Explore All Courses
+                </Button>
+              </Link>
+              <Link href="/auth/login">
+                <Button size="lg" variant="outline" className="border-orange-200 text-orange-600">
+                  <Zap className="w-5 h-5 mr-2" />
+                  View Learning Path
+                </Button>
+              </Link>
             </div>
           </CardContent>
         </Card>

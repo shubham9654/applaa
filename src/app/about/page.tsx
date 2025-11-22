@@ -20,7 +20,7 @@ export default function AboutPage() {
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-2">
               <Image src="/applaa.png" alt="Applaa Logo" width={32} height={32} />
-              <span className="text-xl font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
+              <span className="text-3xl font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
                 Applaa
               </span>
             </Link>
@@ -728,7 +728,7 @@ export default function AboutPage() {
           <div className="text-center">
             <div className="flex items-center justify-center space-x-2 mb-4">
               <Image src="/applaa.png" alt="Applaa Logo" width={32} height={32} />
-              <span className="text-xl font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
+              <span className="text-3xl font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
                 Applaa
               </span>
             </div>

@@ -32,38 +32,37 @@ const getGameUrl = (gameName: string): string => {
     'Year 9 Maths Tracker': 'year9maths',
     'Solitaire Collection': 'solitairecollection',
     'Spot The Difference': 'spotthedifference',
-    'Your Todos List': 'yourtodoslist',
-    'Arcane Breaker': 'arcanebreaker',
+    'Your Todos List': 'yourtodos',
+    'Arcane Breaker': 'https://breakout-arkanoid.vercel.app/',
     'Crossword Puzzle Game': 'crosswordpuzzlegame',
     'Dots And Boxes': 'dotsandboxes',
-    'Jigsaw Puzzle': 'jigsawpuzzle',
     'Whack A Mole': 'whackamole',
     'Connect Four': 'connectfour',
     'Countdown Quiz': 'countdownquiz',
-    'Sliding Puzzle': 'slidingpuzzle',
-    'Adventure Map': 'adventuremap',
-    'Emoji Match': 'emojimatch',
-    'Escape the Maze': 'escapethemaze',
-    'Stick Sword Duel': 'stickswordduel',
+    'Adventure Map': 'adventure-map',
+    'Emoji Match': 'emoji-match',
+    'Escape the Maze': 'scape-the-maze',
+    'Stick Sword Duel': 'sticksword-uel',
     'Element Family Builder': 'elementfamilybuilder',
     'Tap Zero': 'tapzero',
     'Bubble Pop': 'bubblepop',
     'Maze of Terror': 'mazeofterror',
-    'Abstract Speedster': 'abstractspeedster',
-    'Mono-Fleet': 'monofleet',
+    'Abstract Speedster': 'abstract_speedster',
+    'Mono-Fleet': 'mono-fleet',
     'Snake': 'snake',
     'Collect & Run Challenge': 'collectrunchallenge',
-    'Draw Quest': 'drawquest',
-    'Royalblue Camel': 'royalbluecamel',
-    'Crystal Forest Guardian': 'crystalforestguardian',
-    'Cyber Runner': 'cyberrunner',
-    'Moon Colony Tycoon': 'mooncolonytycoon',
-    'Desert Caravan Trader': 'desertcaravantrader',
-    'Sky Hopper (Flappy Bird)': 'skyhopper',
-    'Tic-Tac-Toe': 'tictactoe',
-    'Jumpy Dot': 'jumpydot',
-    'Truth or Dare Spinner': 'truthordarespinner',
-    'Net Worth Calculator': 'networthcalculator',
+    'Cyber Runner': 'cyber-runner',
+    'Moon Colony Tycoon': 'moon-colony-tycoon',
+    'Desert Caravan Trader': 'desert-caravan-trader',
+    'Tic-Tac-Toe': 'tik-tok-toe',
+    'Jumpy Dot': 'jumpy-dot',
+    'Truth or Dare Spinner': 'truth-or-dare-spinner',
+    'Net Worth Calculator': 'net-worth-calculator',
+  }
+  
+  // Check if it's an external URL (starts with http)
+  if (urlMap[gameName]?.startsWith('http')) {
+    return urlMap[gameName]
   }
   
   const slug = urlMap[gameName] || gameName.toLowerCase().replace(/\s+/g, '').replace(/[^a-z0-9]/g, '')
@@ -79,7 +78,7 @@ export default function Home() {
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-2">
               <Image src="/applaa.png" alt="Applaa Logo" width={32} height={32} />
-              <span className="text-xl font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
+              <span className="text-3xl font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
                 Applaa
               </span>
             </Link>
@@ -206,7 +205,7 @@ export default function Home() {
             </Link>
 
             {/* AI Academy Card - Second */}
-            <Link href="#games">
+            <Link href="/academy">
               <Card className="group hover:shadow-xl transition-all duration-300 border-orange-100 hover:border-orange-300 cursor-pointer">
                 <CardHeader className="text-center">
                   <div className="w-16 h-16 bg-linear-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
@@ -630,22 +629,6 @@ export default function Home() {
               </Card>
             </Link>
 
-            {/* Game Tile 14 - Jigsaw Puzzle */}
-            <Link href={getGameUrl('Jigsaw Puzzle')} target="_blank" rel="noopener noreferrer">
-              <Card className="group hover:shadow-2xl hover:scale-105 transition-all duration-300 border-orange-100 hover:border-orange-300 cursor-pointer overflow-hidden">
-              <div className="aspect-square bg-gradient-to-br from-orange-300 via-red-400 to-pink-500 flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.3),transparent_60%)]"></div>
-                <div className="relative z-10 text-3xl md:text-4xl transform group-hover:scale-110 transition-transform">🧩</div>
-                <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-blue-400/50 to-transparent"></div>
-              </div>
-              <CardContent className="p-4">
-                <h3 className="font-bold text-sm md:text-base text-gray-800 group-hover:text-orange-600 transition-colors flex items-center">
-                  <span className="text-orange-600 mr-1">→</span> Jigsaw Puzzle
-                </h3>
-              </CardContent>
-              </Card>
-            </Link>
-
             {/* Game Tile 15 - Whack A Mole */}
             <Link href={getGameUrl('Whack A Mole')} target="_blank" rel="noopener noreferrer">
               <Card className="group hover:shadow-2xl hover:scale-105 transition-all duration-300 border-orange-100 hover:border-orange-300 cursor-pointer overflow-hidden">
@@ -693,24 +676,6 @@ export default function Home() {
               <CardContent className="p-4">
                 <h3 className="font-bold text-sm md:text-base text-gray-800 group-hover:text-orange-600 transition-colors flex items-center">
                   <span className="text-orange-600 mr-1">→</span> Countdown Quiz
-                </h3>
-              </CardContent>
-              </Card>
-            </Link>
-
-            {/* Game Tile 18 - Sliding Puzzle */}
-            <Link href={getGameUrl('Sliding Puzzle')} target="_blank" rel="noopener noreferrer">
-              <Card className="group hover:shadow-2xl hover:scale-105 transition-all duration-300 border-orange-100 hover:border-orange-300 cursor-pointer overflow-hidden">
-              <div className="aspect-square bg-gradient-to-br from-gray-700 via-gray-600 to-gray-800 flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_48%,rgba(255,255,255,0.1)_49%,rgba(255,255,255,0.1)_51%,transparent_52%)] bg-[length:30px_30px]"></div>
-                <div className="relative z-10 text-3xl md:text-4xl transform group-hover:scale-110 transition-transform">🔲</div>
-                <div className="absolute inset-0 grid grid-cols-4 gap-1 p-4">
-                  {[...Array(16)].map((_, i) => <div key={i} className={`${i < 15 ? 'bg-gradient-to-br from-blue-400 to-blue-600' : 'bg-gray-500'} rounded shadow-lg`}></div>)}
-                </div>
-              </div>
-              <CardContent className="p-4">
-                <h3 className="font-bold text-sm md:text-base text-gray-800 group-hover:text-orange-600 transition-colors flex items-center">
-                  <span className="text-orange-600 mr-1">→</span> Sliding Puzzle
                 </h3>
               </CardContent>
               </Card>
@@ -907,62 +872,6 @@ export default function Home() {
               </Card>
             </Link>
 
-            {/* Game Tile 31 - Draw Quest */}
-            <Link href={getGameUrl('Draw Quest')} target="_blank" rel="noopener noreferrer">
-              <Card className="group hover:shadow-2xl hover:scale-105 transition-all duration-300 border-orange-100 hover:border-orange-300 cursor-pointer overflow-hidden">
-              <div className="aspect-square bg-gradient-to-br from-gray-900 via-black to-gray-900 flex items-center justify-center relative overflow-hidden border-2 border-orange-500">
-                <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-gray-700 to-gray-600"></div>
-                <div className="relative z-10 text-3xl md:text-4xl transform group-hover:scale-110 transition-transform">✏️</div>
-                <div className="absolute bottom-12 left-1/4 w-6 h-6 bg-blue-500 rounded shadow-lg"></div>
-                <div className="absolute bottom-16 left-1/2 w-4 h-4 bg-orange-500 rounded-full"></div>
-                <div className="absolute bottom-16 right-1/4 w-4 h-4 bg-orange-500 rounded-full"></div>
-                <div className="absolute bottom-2 left-2 text-white text-xs font-bold">Score: 0</div>
-              </div>
-              <CardContent className="p-4">
-                <h3 className="font-bold text-sm md:text-base text-gray-800 group-hover:text-orange-600 transition-colors flex items-center">
-                  <span className="text-orange-600 mr-1">→</span> Draw Quest
-                </h3>
-              </CardContent>
-              </Card>
-            </Link>
-
-            {/* Game Tile 32 - Royalblue Camel */}
-            <Link href={getGameUrl('Royalblue Camel')} target="_blank" rel="noopener noreferrer">
-              <Card className="group hover:shadow-2xl hover:scale-105 transition-all duration-300 border-orange-100 hover:border-orange-300 cursor-pointer overflow-hidden">
-              <div className="aspect-square bg-gradient-to-br from-blue-800 via-blue-900 to-indigo-950 flex items-center justify-center relative overflow-hidden border-2 border-blue-400">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.3),transparent_70%)]"></div>
-                <div className="relative z-10 text-3xl md:text-4xl transform group-hover:scale-110 transition-transform">🐫</div>
-                <div className="absolute top-4 left-4 right-4 text-blue-200 text-xs font-bold">Shadows of Suspicion</div>
-                <div className="absolute bottom-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-yellow-400 text-sm font-bold">Investigation Failed</div>
-                <div className="absolute bottom-4 left-1/4 w-4 h-4 bg-blue-400 rounded"></div>
-                <div className="absolute bottom-4 right-1/4 w-4 h-4 bg-yellow-400 rounded"></div>
-              </div>
-              <CardContent className="p-4">
-                <h3 className="font-bold text-sm md:text-base text-gray-800 group-hover:text-orange-600 transition-colors flex items-center">
-                  <span className="text-orange-600 mr-1">→</span> Royalblue Camel
-                </h3>
-              </CardContent>
-              </Card>
-            </Link>
-
-            {/* Game Tile 33 - Crystal Forest Guardian */}
-            <Link href={getGameUrl('Crystal Forest Guardian')} target="_blank" rel="noopener noreferrer">
-              <Card className="group hover:shadow-2xl hover:scale-105 transition-all duration-300 border-orange-100 hover:border-orange-300 cursor-pointer overflow-hidden">
-              <div className="aspect-square bg-gradient-to-br from-green-500 via-emerald-600 to-teal-700 flex items-center justify-center relative overflow-hidden border-2 border-green-400">
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(34,197,94,0.4),transparent_60%)]"></div>
-                <div className="relative z-10 text-3xl md:text-4xl transform group-hover:scale-110 transition-transform">🌲</div>
-                <div className="absolute top-2 left-2 right-2 h-6 bg-green-800/50 rounded backdrop-blur-sm border border-green-700/50 text-green-100 text-xs flex items-center justify-center">Guardian of the Eternal Grove</div>
-                <div className="absolute bottom-8 left-1/4 w-3 h-3 bg-green-300 rounded-full"></div>
-                <div className="absolute bottom-12 left-1/2 w-4 h-4 bg-blue-400 rounded"></div>
-              </div>
-              <CardContent className="p-4">
-                <h3 className="font-bold text-sm md:text-base text-gray-800 group-hover:text-orange-600 transition-colors flex items-center">
-                  <span className="text-orange-600 mr-1">→</span> Crystal Forest Guardian
-                </h3>
-              </CardContent>
-              </Card>
-            </Link>
-
             {/* Game Tile 34 - Cyber Runner */}
             <Link href={getGameUrl('Cyber Runner')} target="_blank" rel="noopener noreferrer">
               <Card className="group hover:shadow-2xl hover:scale-105 transition-all duration-300 border-orange-100 hover:border-orange-300 cursor-pointer overflow-hidden">
@@ -1025,25 +934,6 @@ export default function Home() {
               <CardContent className="p-4">
                 <h3 className="font-bold text-sm md:text-base text-gray-800 group-hover:text-orange-600 transition-colors flex items-center">
                   <span className="text-orange-600 mr-1">→</span> Desert Caravan Trader
-                </h3>
-              </CardContent>
-              </Card>
-            </Link>
-
-            {/* Game Tile 37 - Sky Hopper (Flappy Bird) */}
-            <Link href={getGameUrl('Sky Hopper (Flappy Bird)')} target="_blank" rel="noopener noreferrer">
-              <Card className="group hover:shadow-2xl hover:scale-105 transition-all duration-300 border-orange-100 hover:border-orange-300 cursor-pointer overflow-hidden">
-              <div className="aspect-square bg-gradient-to-br from-sky-300 via-blue-400 to-cyan-500 flex items-center justify-center relative overflow-hidden border-2 border-green-400">
-                <div className="absolute bottom-0 left-0 right-0 h-1/4 bg-gradient-to-t from-green-500 to-green-400"></div>
-                <div className="relative z-10 text-3xl md:text-4xl transform group-hover:scale-110 transition-transform">🐦</div>
-                <div className="absolute top-1/4 right-1/4 w-8 h-16 bg-green-500 rounded-t-lg"></div>
-                <div className="absolute top-1/2 right-1/4 w-8 h-16 bg-green-500 rounded-b-lg"></div>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-red-500/80 text-white text-xs px-3 py-2 rounded-lg shadow-lg">Game Over</div>
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-xs font-bold">Score: 0</div>
-              </div>
-              <CardContent className="p-4">
-                <h3 className="font-bold text-sm md:text-base text-gray-800 group-hover:text-orange-600 transition-colors flex items-center">
-                  <span className="text-orange-600 mr-1">→</span> Sky Hopper (Flappy Bird)
                 </h3>
               </CardContent>
               </Card>
@@ -1184,10 +1074,10 @@ export default function Home() {
                   {/* <Sparkles className="w-5 h-5 text-white" /> */}
                   <img src="/applaa.png" alt="Applaa Logo" width={32} height={32} />
                 </div>
-                <span className="text-xl font-bold">Applaa</span>
+                <span className="text-2xl font-bold text-white">Applaa</span>
               </div>
               <p className="text-gray-400 text-sm">
-                The safe, fun social network where kids learn AI and build amazing things together.
+                The safe, fun kid-safe gaming hub where kids learn AI and build amazing things together.
               </p>
             </div>
             
