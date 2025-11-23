@@ -733,7 +733,7 @@ export default function AboutPage() {
               </span>
             </div>
             <p className="text-gray-600 mb-4">
-              The ultimate kid-safe gaming hub: Use AI to build games and express creativity in a safe space.
+              The ultimate kid-safe gaming hub: Use AI to build games, apps and express creativity in a safe space.
             </p>
             <p className="text-sm text-gray-500">
               © 2024 Applaa. All rights reserved.

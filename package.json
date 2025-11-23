@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "build:static": "next build",
     "start": "NODE_ENV=production node .next/standalone/server.js 2>&1 | tee server.log",

@@ -16,7 +16,8 @@ import {
   Zap,
   Rocket,
   BookOpen,
-  GraduationCap
+  GraduationCap,
+  Smartphone
 } from 'lucide-react'
 
 // Helper function to generate game URLs
@@ -124,7 +125,7 @@ export default function Home() {
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              The ultimate kid-safe gaming hub: Use AI to build games and express creativity in a safe space.
+              The ultimate kid-safe gaming hub: Use AI to build games, apps and express creativity in a safe space.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -159,39 +160,39 @@ export default function Home() {
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Discover, learn, and create with our exciting suite of tools designed just for kids!
+              Discover, learn, and create with our exciting suite of tools
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-4 gap-8">
             {/* Game Hub Card - First */}
             <Link href="#games">
-              <Card className="group hover:shadow-xl transition-all duration-300 border-orange-100 hover:border-orange-300 cursor-pointer">
+              <Card className="group hover:shadow-xl transition-all duration-300 border-orange-100 hover:border-orange-300 cursor-pointer h-full flex flex-col">
                 <CardHeader className="text-center">
                   <div className="w-16 h-16 bg-linear-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                     <Gamepad2 className="w-8 h-8 text-white" />
                   </div>
-                  <CardTitle className="text-xl font-bold text-gray-800">Game Hub</CardTitle>
+                  <CardTitle className="text-xl font-bold text-gray-800">Games Hub</CardTitle>
                   <CardDescription className="text-gray-600">
                     Play, create, and share amazing games with friends in our safe gaming community
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3 text-sm text-gray-600">
+                <CardContent className="flex-1 flex flex-col">
+                  <ul className="space-y-3 text-sm text-gray-600 flex-1">
                     <li className="flex items-center">
-                      <Trophy className="w-4 h-4 text-orange-500 mr-2" />
+                      <Trophy className="w-4 h-4 text-orange-500 mr-2 flex-shrink-0" />
                       Play & Create Games
                     </li>
                     <li className="flex items-center">
-                      <Trophy className="w-4 h-4 text-orange-500 mr-2" />
-                      Challenge Friends
+                      <Trophy className="w-4 h-4 text-orange-500 mr-2 flex-shrink-0" />
+                      Build any Game fast from 1000's of Game templates
                     </li>
                     <li className="flex items-center">
-                      <Trophy className="w-4 h-4 text-orange-500 mr-2" />
+                      <Trophy className="w-4 h-4 text-orange-500 mr-2 flex-shrink-0" />
                       Game Development Tools
                     </li>
                     <li className="flex items-center">
-                      <Trophy className="w-4 h-4 text-orange-500 mr-2" />
+                      <Trophy className="w-4 h-4 text-orange-500 mr-2 flex-shrink-0" />
                       Leaderboards & Rankings
                     </li>
                   </ul>
@@ -204,9 +205,49 @@ export default function Home() {
               </Card>
             </Link>
 
-            {/* AI Academy Card - Second */}
+            {/* Apps (Mobile and Web) Card - Second */}
+            <Link href="/auth/login">
+              <Card className="group hover:shadow-xl transition-all duration-300 border-orange-100 hover:border-orange-300 cursor-pointer h-full flex flex-col">
+                <CardHeader className="text-center">
+                  <div className="w-16 h-16 bg-linear-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                    <Smartphone className="w-8 h-8 text-white" />
+                  </div>
+                  <CardTitle className="text-xl font-bold text-gray-800">Apps (Mobile and Web)</CardTitle>
+                  <CardDescription className="text-gray-600">
+                    Build any App in minutes with our powerful Ai-powered app builder for web and Mobile.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="flex-1 flex flex-col">
+                  <ul className="space-y-3 text-sm text-gray-600 flex-1">
+                    <li className="flex items-center">
+                      <Zap className="w-4 h-4 text-orange-500 mr-2 flex-shrink-0" />
+                      Idea to app in minutes
+                    </li>
+                    <li className="flex items-center">
+                      <Zap className="w-4 h-4 text-orange-500 mr-2 flex-shrink-0" />
+                      1000's of templates to build any app fast
+                    </li>
+                    <li className="flex items-center">
+                      <Zap className="w-4 h-4 text-orange-500 mr-2 flex-shrink-0" />
+                      No coding needed - build and deploy any App, Website fast
+                    </li>
+                    <li className="flex items-center">
+                      <Zap className="w-4 h-4 text-orange-500 mr-2 flex-shrink-0" />
+                      One-click iOS & Android builds
+                    </li>
+                  </ul>
+                  <div className="mt-6">
+                    <Badge className="bg-orange-100 text-orange-800 hover:bg-orange-200">
+                      All Ages
+                    </Badge>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+
+            {/* AI Academy Card - Third */}
             <Link href="/academy">
-              <Card className="group hover:shadow-xl transition-all duration-300 border-orange-100 hover:border-orange-300 cursor-pointer">
+              <Card className="group hover:shadow-xl transition-all duration-300 border-orange-100 hover:border-orange-300 cursor-pointer h-full flex flex-col">
                 <CardHeader className="text-center">
                   <div className="w-16 h-16 bg-linear-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                     <GraduationCap className="w-8 h-8 text-white" />
@@ -216,8 +257,8 @@ export default function Home() {
                     Learn artificial intelligence through fun, interactive courses designed for young minds
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3 text-sm text-gray-600">
+                <CardContent className="flex-1 flex flex-col">
+                  <ul className="space-y-3 text-sm text-gray-600 flex-1">
                     <li className="flex items-center">
                       <Star className="w-4 h-4 text-orange-500 mr-2" />
                       AI Basics & Machine Learning
@@ -237,16 +278,16 @@ export default function Home() {
                   </ul>
                   <div className="mt-6">
                     <Badge className="bg-orange-100 text-orange-800 hover:bg-orange-200">
-                      Age 6-18
+                      All Ages
                     </Badge>
                   </div>
                 </CardContent>
               </Card>
             </Link>
 
-            {/* Social Community Card - Third */}
+            {/* Social Community Card - Fourth */}
             <Link href="/auth/login">
-              <Card className="group hover:shadow-xl transition-all duration-300 border-orange-100 hover:border-orange-300 cursor-pointer">
+              <Card className="group hover:shadow-xl transition-all duration-300 border-orange-100 hover:border-orange-300 cursor-pointer h-full flex flex-col">
                 <CardHeader className="text-center">
                   <div className="w-16 h-16 bg-linear-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                     <Users className="w-8 h-8 text-white" />
@@ -256,8 +297,8 @@ export default function Home() {
                     Connect with friends, share creations, and build your digital community safely
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3 text-sm text-gray-600">
+                <CardContent className="flex-1 flex flex-col">
+                  <ul className="space-y-3 text-sm text-gray-600 flex-1">
                     <li className="flex items-center">
                       <Heart className="w-4 h-4 text-orange-500 mr-2" />
                       Make New Friends
