@@ -277,7 +277,7 @@ export default function GamesPage() {
                         Play Now
                       </Button>
                     </Link>
-                    <Link href="/auth/login">
+                    <Link href="https://app.applaa.com/login/">
                       <Button variant="outline" size="sm">
                         <Heart className="w-4 h-4" />
                       </Button>
@@ -356,7 +356,7 @@ export default function GamesPage() {
                               Featured
                             </Badge>
                           )}
-                          <Link href="/auth/login">
+                          <Link href="https://app.applaa.com/login/">
                             <Button variant="ghost" size="sm">
                               <Heart className="w-4 h-4" />
                             </Button>
@@ -396,7 +396,7 @@ export default function GamesPage() {
                             Play
                           </Button>
                         </Link>
-                        <Link href="/auth/login">
+                        <Link href="https://app.applaa.com/login/">
                           <Button variant="outline" size="sm">
                             <MessageCircle className="w-4 h-4" />
                           </Button>
@@ -438,7 +438,7 @@ export default function GamesPage() {
                       <p className="font-medium text-sm">{creator.username}</p>
                       <p className="text-xs text-gray-600">{creator.games} games • {creator.followers} followers</p>
                     </div>
-                    <Link href="/auth/login">
+                    <Link href="https://app.applaa.com/login/">
                       <Button variant="outline" size="sm">
                         Follow
                       </Button>

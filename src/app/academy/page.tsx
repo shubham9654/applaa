@@ -384,7 +384,7 @@ export default function AcademyPage() {
                   {/* Action Buttons */}
                   <div className="flex space-x-2">
                     {course.status === 'available' && (
-                      <Link href="/auth/login" className="flex-1">
+                      <Link href="https://app.applaa.com/login/" className="flex-1">
                         <Button className="w-full bg-gradient-to-r from-orange-500 to-orange-600">
                           <Play className="w-4 h-4 mr-2" />
                           Start Learning
@@ -393,7 +393,7 @@ export default function AcademyPage() {
                     )}
                     
                     {course.status === 'enrolled' && (
-                      <Link href="/auth/login" className="flex-1">
+                      <Link href="https://app.applaa.com/login/" className="flex-1">
                         <Button className="w-full bg-gradient-to-r from-orange-500 to-orange-600">
                           <Play className="w-4 h-4 mr-2" />
                           Continue Learning
@@ -402,7 +402,7 @@ export default function AcademyPage() {
                     )}
                     
                     {course.status === 'completed' && (
-                      <Link href="/auth/login" className="flex-1">
+                      <Link href="https://app.applaa.com/login/" className="flex-1">
                         <Button variant="outline" className="w-full border-green-200 text-green-600">
                           <Target className="w-4 h-4 mr-2" />
                           Review Certificate
@@ -411,7 +411,7 @@ export default function AcademyPage() {
                     )}
                     
                     {course.status === 'locked' && (
-                      <Link href="/auth/login" className="flex-1">
+                      <Link href="https://app.applaa.com/login/" className="flex-1">
                         <Button variant="outline" className="w-full border-gray-200 text-gray-400">
                           <Lock className="w-4 h-4 mr-2" />
                           Unlock at Level 10
@@ -443,13 +443,13 @@ export default function AcademyPage() {
               Join thousands of kids learning AI, creating games, and building the future together!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/auth/login">
+              <Link href="https://app.applaa.com/login/">
                 <Button size="lg" className="bg-gradient-to-r from-orange-500 to-orange-600">
                   <Rocket className="w-5 h-5 mr-2" />
                   Explore All Courses
                 </Button>
               </Link>
-              <Link href="/auth/login">
+              <Link href="https://app.applaa.com/login/">
                 <Button size="lg" variant="outline" className="border-orange-200 text-orange-600">
                   <Zap className="w-5 h-5 mr-2" />
                   View Learning Path

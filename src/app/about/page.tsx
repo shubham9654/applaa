@@ -37,10 +37,10 @@ export default function AboutPage() {
               <Link href="/about" className="text-orange-500 font-medium">
                 About Us
               </Link>
-              <Link href="/auth/signup" className="text-gray-600 hover:text-orange-600 transition-colors">
+              <Link href="https://app.applaa.com/registration/" className="text-gray-600 hover:text-orange-600 transition-colors">
                 Sign Up
               </Link>
-              <Link href="/auth/login">
+              <Link href="https://app.applaa.com/login/">
                 <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50">
                   Login
                 </Button>
@@ -60,7 +60,7 @@ export default function AboutPage() {
           <p className="text-xl md:text-2xl text-gray-700 mb-8">
             Applaa unites community, education, and creativity to accelerate learning through play. Our mission is to make AI and game development tools accessible for every young builder, creator, and learner.
           </p>
-          <Link href="/auth/signup">
+          <Link href="https://app.applaa.com/registration/">
             <Button size="lg" className="bg-orange-500 text-white hover:bg-orange-600 shadow-lg">
               Join the Applaa Community
             </Button>

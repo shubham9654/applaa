@@ -96,10 +96,10 @@ export default function Home() {
               <Link href="/about" className="text-gray-600 hover:text-orange-600 transition-colors">
                 About Us
               </Link>
-              <Link href="/auth/signup" className="text-gray-600 hover:text-orange-600 transition-colors">
+              <Link href="https://app.applaa.com/registration/" className="text-gray-600 hover:text-orange-600 transition-colors">
                 Sign Up
               </Link>
-              <Link href="/auth/login">
+              <Link href="https://app.applaa.com/login/">
                 <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50">
                   Login
                 </Button>
@@ -129,7 +129,7 @@ export default function Home() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/auth/signup">
+              <Link href="https://app.applaa.com/registration/">
                 <Button size="lg" className="bg-linear-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-3 text-lg">
                   <Rocket className="w-5 h-5 mr-2" />
                   Start Your Adventure
@@ -206,7 +206,7 @@ export default function Home() {
             </Link>
 
             {/* Apps (Mobile and Web) Card - Second */}
-            <Link href="/auth/login">
+            <Link href="https://app.applaa.com/login/">
               <Card className="group hover:shadow-xl transition-all duration-300 border-orange-100 hover:border-orange-300 cursor-pointer h-full flex flex-col">
                 <CardHeader className="text-center">
                   <div className="w-16 h-16 bg-linear-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
@@ -286,7 +286,7 @@ export default function Home() {
             </Link>
 
             {/* Social Community Card - Fourth */}
-            <Link href="/auth/login">
+            <Link href="https://app.applaa.com/login/">
               <Card className="group hover:shadow-xl transition-all duration-300 border-orange-100 hover:border-orange-300 cursor-pointer h-full flex flex-col">
                 <CardHeader className="text-center">
                   <div className="w-16 h-16 bg-linear-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
@@ -1090,7 +1090,7 @@ export default function Home() {
             Join thousands of kids who are already learning, creating, and making friends on Applaa!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/auth/signup">
+            <Link href="https://app.applaa.com/registration/">
               <Button size="lg" className="bg-white text-orange-600 hover:bg-gray-100 px-8 py-3 text-lg">
                 <Sparkles className="w-5 h-5 mr-2" />
                 Join Now - It's Free!

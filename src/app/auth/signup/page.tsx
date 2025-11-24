@@ -117,7 +117,7 @@ export default function SignupPage() {
         await new Promise(resolve => setTimeout(resolve, 1000))
         
         // Redirect to login or dashboard
-        router.push('/auth/login?message=signup-success')
+        router.push('https://app.applaa.com/login/?message=signup-success')
       } catch (error) {
         setErrors({ general: 'Signup failed. Please try again.' })
       }
@@ -144,7 +144,7 @@ export default function SignupPage() {
                 Applaa
               </span>
             </Link>
-            <Link href="/auth/login">
+            <Link href="https://app.applaa.com/login/">
               <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50">
                 Already have an account? Login
               </Button>
@@ -348,7 +348,7 @@ export default function SignupPage() {
         <div className="text-center mt-6">
           <p className="text-gray-600">
             Already have an account?{' '}
-            <Link href="/auth/login" className="text-orange-600 hover:text-orange-700 font-medium">
+            <Link href="https://app.applaa.com/login/" className="text-orange-600 hover:text-orange-700 font-medium">
               Login here
             </Link>
           </p>

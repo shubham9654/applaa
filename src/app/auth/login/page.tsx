@@ -91,7 +91,7 @@ export default function LoginPage() {
                 Applaa
               </span>
             </Link>
-            <Link href="/auth/signup">
+            <Link href="https://app.applaa.com/registration/">
               <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50">
                 Create New Account
               </Button>
@@ -218,7 +218,7 @@ export default function LoginPage() {
         <div className="text-center mt-6">
           <p className="text-gray-600">
             Don't have an account?{' '}
-            <Link href="/auth/signup" className="text-orange-600 hover:text-orange-700 font-medium">
+            <Link href="https://app.applaa.com/registration/" className="text-orange-600 hover:text-orange-700 font-medium">
               Sign up here
             </Link>
           </p>
