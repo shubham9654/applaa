@@ -78,14 +78,49 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   
   const recentGames = [
+    // Featured Games
     { name: 'Typing Invaders', emoji: '👾', bgClass: 'bg-linear-to-br from-gray-900 to-gray-800', tag: 'COMPUTER', url: getGameUrl('Typing Invaders') },
     { name: 'Snake', emoji: '🐍', bgClass: 'bg-linear-to-br from-gray-900 via-black to-gray-900', url: getGameUrl('Snake') },
     { name: 'Abstract Speedster', emoji: '🏎️', bgClass: 'bg-linear-to-br from-gray-800 via-gray-900 to-black', tag: 'Use LEFT/RIGHT', url: getGameUrl('Abstract Speedster') },
-    { name: 'Rock Paper Scissor', emoji: '✂️', bgClass: 'bg-linear-to-br from-blue-500 to-purple-600', url: getGameUrl('Rock Paper Scissor') },
-    { name: 'Ping Pong', emoji: '🏓', bgClass: 'bg-black', url: getGameUrl('Ping Pong') },
-    { name: 'Skateboard Extreme', emoji: '🛹', bgClass: 'bg-linear-to-br from-orange-400 to-yellow-500', url: getGameUrl('Skateboard Extreme') },
     { name: 'Memory Match', emoji: '🧩', bgClass: 'bg-linear-to-br from-indigo-500 to-purple-600', url: getGameUrl('Memory Match') },
     { name: 'Words Finding', emoji: '🔤', bgClass: 'bg-linear-to-br from-blue-400 to-indigo-600', url: getGameUrl('Words Finding') },
+    // Puzzle & Logic Games
+    { name: 'Crossword Puzzle Game', emoji: '📰', bgClass: 'bg-linear-to-br from-yellow-400 to-orange-500', url: getGameUrl('Crossword Puzzle Game') },
+    { name: 'Spot The Difference', emoji: '🔍', bgClass: 'bg-linear-to-br from-blue-300 to-blue-500', url: getGameUrl('Spot The Difference') },
+    { name: 'Connect Four', emoji: '🔴', bgClass: 'bg-linear-to-br from-red-500 to-red-700', url: getGameUrl('Connect Four') },
+    { name: 'Dots And Boxes', emoji: '⚫', bgClass: 'bg-linear-to-br from-gray-700 to-gray-900', url: getGameUrl('Dots And Boxes') },
+    { name: 'Escape the Maze', emoji: '🏛️', bgClass: 'bg-linear-to-br from-amber-600 to-amber-800', url: getGameUrl('Escape the Maze') },
+    { name: 'Maze of Terror', emoji: '🔷', bgClass: 'bg-linear-to-br from-purple-800 to-purple-900', url: getGameUrl('Maze of Terror') },
+    { name: 'Tap Zero', emoji: '0', bgClass: 'bg-linear-to-br from-gray-600 to-gray-800', url: getGameUrl('Tap Zero') },
+    { name: 'Emoji Match', emoji: '😊', bgClass: 'bg-linear-to-br from-pink-400 to-pink-600', url: getGameUrl('Emoji Match') },
+    // Arcade & Classic Games
+    { name: 'Ping Pong', emoji: '🏓', bgClass: 'bg-black', url: getGameUrl('Ping Pong') },
+    { name: 'Whack A Mole', emoji: '🕳️', bgClass: 'bg-linear-to-br from-brown-600 to-brown-800', url: getGameUrl('Whack A Mole') },
+    { name: 'Bubble Pop', emoji: '🫧', bgClass: 'bg-linear-to-br from-cyan-400 to-cyan-600', url: getGameUrl('Bubble Pop') },
+    { name: 'Arcane Breaker', emoji: '⚡', bgClass: 'bg-linear-to-br from-yellow-500 to-yellow-700', url: getGameUrl('Arcane Breaker') },
+    { name: 'Solitaire Collection', emoji: '🃏', bgClass: 'bg-linear-to-br from-green-600 to-green-800', url: getGameUrl('Solitaire Collection') },
+    { name: 'Mono-Fleet', emoji: '🔷', bgClass: 'bg-linear-to-br from-blue-600 to-blue-800', url: getGameUrl('Mono-Fleet') },
+    // Speed & Action Games
+    { name: 'Infinite Runner', emoji: '🏃', bgClass: 'bg-linear-to-br from-green-500 to-green-700', url: getGameUrl('Infinite Runner') },
+    { name: 'Skateboard Extreme', emoji: '🛹', bgClass: 'bg-linear-to-br from-orange-400 to-yellow-500', url: getGameUrl('Skateboard Extreme') },
+    { name: 'Cyber Runner', emoji: '🤖', bgClass: 'bg-linear-to-br from-teal-500 to-teal-700', url: getGameUrl('Cyber Runner') },
+    { name: 'Jumpy Dot', emoji: '🔴', bgClass: 'bg-linear-to-br from-red-400 to-red-600', url: getGameUrl('Jumpy Dot') },
+    { name: 'Collect & Run Challenge', emoji: '🏃', bgClass: 'bg-linear-to-br from-lime-500 to-lime-700', url: getGameUrl('Collect & Run Challenge') },
+    { name: 'Stick Sword Duel', emoji: '⚔️', bgClass: 'bg-linear-to-br from-gray-800 to-black', url: getGameUrl('Stick Sword Duel') },
+    // Learning & Academy
+    { name: 'Year 9 Maths Tracker', emoji: '📚', bgClass: 'bg-linear-to-br from-purple-500 to-purple-700', url: getGameUrl('Year 9 Maths Tracker') },
+    { name: 'Countdown Quiz', emoji: '5', bgClass: 'bg-linear-to-br from-indigo-500 to-indigo-700', url: getGameUrl('Countdown Quiz') },
+    { name: 'Element Family Builder', emoji: '⚛️', bgClass: 'bg-linear-to-br from-cyan-500 to-cyan-700', url: getGameUrl('Element Family Builder') },
+    { name: 'Your Todos List', emoji: '📝', bgClass: 'bg-linear-to-br from-blue-400 to-blue-600', url: getGameUrl('Your Todos List') },
+    { name: 'Net Worth Calculator', emoji: '💰', bgClass: 'bg-linear-to-br from-yellow-400 to-yellow-600', url: getGameUrl('Net Worth Calculator') },
+    // Adventure & Creative
+    { name: 'Adventure Map', emoji: '🗺️', bgClass: 'bg-linear-to-br from-amber-500 to-amber-700', url: getGameUrl('Adventure Map') },
+    { name: 'Moon Colony Tycoon', emoji: '🌙', bgClass: 'bg-linear-to-br from-slate-700 to-slate-900', url: getGameUrl('Moon Colony Tycoon') },
+    { name: 'Desert Caravan Trader', emoji: '🐪', bgClass: 'bg-linear-to-br from-orange-600 to-orange-800', url: getGameUrl('Desert Caravan Trader') },
+    // Fun & Party Games
+    { name: 'Rock Paper Scissor', emoji: '✂️', bgClass: 'bg-linear-to-br from-blue-500 to-purple-600', url: getGameUrl('Rock Paper Scissor') },
+    { name: 'Tic-Tac-Toe', emoji: '❌', bgClass: 'bg-linear-to-br from-pink-500 to-rose-600', url: getGameUrl('Tic-Tac-Toe') },
+    { name: 'Truth or Dare Spinner', emoji: '🎯', bgClass: 'bg-linear-to-br from-violet-500 to-violet-700', url: getGameUrl('Truth or Dare Spinner') },
   ]
 
   return (
