@@ -81,7 +81,7 @@ const getGameUrl = (gameName: string): string => {
   }
   
   const slug = urlMap[gameName] || gameName.toLowerCase().replace(/\s+/g, '').replace(/[^a-z0-9]/g, '')
-  return `https://applaa.com/${slug}/`
+  return `https://app.applaa.com/${slug}/`
 }
 
 // Helper function to generate random number under 1000
