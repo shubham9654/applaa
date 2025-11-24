@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Input } from '@/components/ui/input'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import Image from 'next/image'
 import { 
   Sparkles, 
@@ -31,7 +32,8 @@ import {
   BookOpen,
   Palette,
   Music,
-  Shield
+  Shield,
+  Menu
 } from 'lucide-react'
 
 // Helper function to generate game URLs
@@ -88,6 +90,7 @@ const getGameUrl = (gameName: string): string => {
 const randomUnder1000 = () => Math.floor(Math.random() * 1000)
 
 export default function GamesPage() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [sortBy, setSortBy] = useState('popular')
@@ -209,16 +212,51 @@ export default function GamesPage() {
               <Link href="/about" className="text-gray-600 hover:text-orange-600 transition-colors hidden md:block">
                 About Us
               </Link>
-              <Link href="/academy">
+              <Link href="/academy" className="hidden md:block">
                 <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50">
                   AI Academy
                 </Button>
               </Link>
-              <Link href="/profile">
+              <Link href="/profile" className="hidden md:block">
                 <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50">
                   My Profile
                 </Button>
               </Link>
+              {/* Mobile Menu */}
+              <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon" className="md:hidden">
+                    <Menu className="h-6 w-6" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                  <div className="flex flex-col space-y-4 mt-8">
+                    <Link 
+                      href="/about" 
+                      className="text-gray-600 hover:text-orange-600 transition-colors py-2"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      About Us
+                    </Link>
+                    <Link 
+                      href="/academy"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50 w-full">
+                        AI Academy
+                      </Button>
+                    </Link>
+                    <Link 
+                      href="/profile"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50 w-full">
+                        My Profile
+                      </Button>
+                    </Link>
+                  </div>
+                </SheetContent>
+              </Sheet>
             </div>
           </div>
         </div>

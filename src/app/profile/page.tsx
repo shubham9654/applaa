@@ -8,6 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Badge } from '@/components/ui/badge'
 import { Progress } from '@/components/ui/progress'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import Image from 'next/image'
 import { 
   Settings, 
@@ -29,10 +30,12 @@ import {
   MoreVertical,
   Edit,
   LogOut,
-  User
+  User,
+  Menu
 } from 'lucide-react'
 
 export default function ProfilePage() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeTab, setActiveTab] = useState('overview')
 
   // Mock user data
@@ -98,20 +101,46 @@ export default function ProfilePage() {
               </span>
             </Link>
             <div className="flex items-center space-x-4">
-              <Link href="/academy">
+              <Link href="/academy" className="hidden md:block">
                 <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50">
                   AI Academy
                 </Button>
               </Link>
-              <Link href="/games">
+              <Link href="/games" className="hidden md:block">
                 <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50">
                   Game Hub
                 </Button>
               </Link>
-              <Button variant="outline" size="sm">
+              <Button variant="outline" size="sm" className="hidden md:flex">
                 <Settings className="w-4 h-4 mr-2" />
                 Settings
               </Button>
+              {/* Mobile Menu */}
+              <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon" className="md:hidden">
+                    <Menu className="h-6 w-6" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                  <div className="flex flex-col space-y-4 mt-8">
+                    <Link href="/academy" onClick={() => setMobileMenuOpen(false)}>
+                      <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50 w-full">
+                        AI Academy
+                      </Button>
+                    </Link>
+                    <Link href="/games" onClick={() => setMobileMenuOpen(false)}>
+                      <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50 w-full">
+                        Game Hub
+                      </Button>
+                    </Link>
+                    <Button variant="outline" className="w-full" onClick={() => setMobileMenuOpen(false)}>
+                      <Settings className="w-4 h-4 mr-2" />
+                      Settings
+                    </Button>
+                  </div>
+                </SheetContent>
+              </Sheet>
             </div>
           </div>
         </div>

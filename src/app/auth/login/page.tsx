@@ -8,6 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Alert, AlertDescription } from '@/components/ui/alert'
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import Image from 'next/image'
 import { 
   Eye,
@@ -15,11 +16,13 @@ import {
   Lock,
   User,
   Shield,
-  CheckCircle
+  CheckCircle,
+  Menu
 } from 'lucide-react'
 
 export default function LoginPage() {
   const router = useRouter()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [message, setMessage] = useState<string | null>(null)
 
   useEffect(() => {
@@ -91,11 +94,28 @@ export default function LoginPage() {
                 Applaa
               </span>
             </Link>
-            <Link href="https://app.applaa.com/registration/">
+            <Link href="https://app.applaa.com/registration/" className="hidden md:block">
               <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50">
                 Create New Account
               </Button>
             </Link>
+            {/* Mobile Menu */}
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="md:hidden">
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                <div className="flex flex-col space-y-4 mt-8">
+                  <Link href="https://app.applaa.com/registration/" onClick={() => setMobileMenuOpen(false)}>
+                    <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50 w-full">
+                      Create New Account
+                    </Button>
+                  </Link>
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </div>

@@ -1,17 +1,22 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { 
   Sparkles,
   Linkedin,
   Twitter,
-  Mail
+  Mail,
+  Menu
 } from 'lucide-react'
 import Image from 'next/image'
 
 export default function AboutPage() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 to-orange-100">
       {/* Navigation */}
@@ -46,6 +51,61 @@ export default function AboutPage() {
                 </Button>
               </Link>
             </div>
+            {/* Mobile Menu */}
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="md:hidden">
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                <div className="flex flex-col space-y-4 mt-8">
+                  <Link 
+                    href="/#games" 
+                    className="text-gray-600 hover:text-orange-600 transition-colors py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Games
+                  </Link>
+                  <Link 
+                    href="/#features" 
+                    className="text-gray-600 hover:text-orange-600 transition-colors py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Features
+                  </Link>
+                  <Link 
+                    href="/#safety" 
+                    className="text-gray-600 hover:text-orange-600 transition-colors py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Safety
+                  </Link>
+                  <Link 
+                    href="/about" 
+                    className="text-orange-500 font-medium py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    About Us
+                  </Link>
+                  <Link 
+                    href="https://app.applaa.com/registration/" 
+                    className="text-gray-600 hover:text-orange-600 transition-colors py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Sign Up
+                  </Link>
+                  <Link 
+                    href="https://app.applaa.com/login/"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50 w-full">
+                      Login
+                    </Button>
+                  </Link>
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </nav>

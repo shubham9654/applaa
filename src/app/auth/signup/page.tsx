@@ -10,6 +10,7 @@ import { Label } from '@/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Badge } from '@/components/ui/badge'
 import { Alert, AlertDescription } from '@/components/ui/alert'
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import Image from 'next/image'
 import { 
   Shield, 
@@ -19,7 +20,8 @@ import {
   User,
   Mail,
   Lock,
-  Calendar
+  Calendar,
+  Menu
 } from 'lucide-react'
 
 const avatarOptions = [
@@ -40,6 +42,7 @@ const interests = [
 
 export default function SignupPage() {
   const router = useRouter()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
   const [selectedAvatar, setSelectedAvatar] = useState('')
   const [selectedInterests, setSelectedInterests] = useState<string[]>([])
@@ -144,11 +147,28 @@ export default function SignupPage() {
                 Applaa
               </span>
             </Link>
-            <Link href="https://app.applaa.com/login/">
+            <Link href="https://app.applaa.com/login/" className="hidden md:block">
               <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50">
                 Already have an account? Login
               </Button>
             </Link>
+            {/* Mobile Menu */}
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="md:hidden">
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                <div className="flex flex-col space-y-4 mt-8">
+                  <Link href="https://app.applaa.com/login/" onClick={() => setMobileMenuOpen(false)}>
+                    <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50 w-full">
+                      Already have an account? Login
+                    </Button>
+                  </Link>
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </div>
